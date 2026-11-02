@@ -1,0 +1,58 @@
+Duplicate word: [articulate]
+Duplicate word: [associate]
+Duplicate word: [attribute]
+Duplicate word: [charro]
+Duplicate word: [combine]
+Duplicate word: [content]
+Duplicate word: [contrary]
+Duplicate word: [estimate]
+Duplicate word: [export]
+Duplicate word: [graduate]
+Duplicate word: [implant]
+Duplicate word: [imprint]
+Duplicate word: [incline]
+Duplicate word: [increase]
+Duplicate word: [indent]
+Duplicate word: [initiate]
+Duplicate word: [insert]
+Duplicate word: [insult]
+Duplicate word: [inter]
+Duplicate word: [intrigue]
+Duplicate word: [invite]
+Duplicate word: [la]
+Duplicate word: [mandate]
+Duplicate word: [moderate]
+Duplicate word: [object]
+Duplicate word: [overbid]
+Duplicate word: [overburden]
+Duplicate word: [overdose]
+Duplicate word: [overdose]
+Duplicate word: [overdress]
+Duplicate word: [overdress]
+Duplicate word: [overdrive]
+Duplicate word: [overhang]
+Duplicate word: [overhaul]
+Duplicate word: [overhaul]
+Duplicate word: [overlap]
+Duplicate word: [overlay]
+Duplicate word: [overlook]
+Duplicate word: [overman]
+Duplicate word: [overprint]
+Duplicate word: [override]
+Duplicate word: [overrun]
+Duplicate word: [oversize]
+Duplicate word: [overwork]
+Duplicate word: [re]
+tempo: 918 utterances, every one spoken; 10 needed a lower tempo than asked (rule 11)
+  (tempo took 108 s)
+tokens: 848 utterances, no crash
+  (tokens took 420 s)
+text: 418 spoken, 32 with nothing to say, no crash
+  (text took 51 s)
+phonetic: 95 spoken, 55 refused, no crash
+  (phonetic took 1 s)
+params: 196 extremes spoken, 6 refused by a shared limit; slowest 10.48 s (voice 4: tempo = 0.1)
+  (params took 157 s)
+random: 100 settings spoken, 0 not
+  (random took 53 s)
+0 failures

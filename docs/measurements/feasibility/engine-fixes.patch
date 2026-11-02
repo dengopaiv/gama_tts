@@ -1,0 +1,60 @@
+diff --git a/gama_tts/src/text_parser/english/IspTrans.cpp b/gama_tts/src/text_parser/english/IspTrans.cpp
+index de31359..93cbd36 100644
+--- a/gama_tts/src/text_parser/english/IspTrans.cpp
++++ b/gama_tts/src/text_parser/english/IspTrans.cpp
+@@ -865,7 +865,9 @@ ispTrans(char *string, char *result)
+ 
+ 	strcpy(tstr, string);
+ 	while (1) {
+-		if (*string && (trie[INDEX(*string) + i].val == *string)) {
++		// A character outside the trie's alphabet, near the end of the trie, would index past it.
++		const int trieIndex = INDEX(*string) + i;
++		if (*string && trieIndex >= 0 && trieIndex < TRIE_NODES && (trie[trieIndex].val == *string)) {
+ 			tmp = trie[INDEX(*string) + i].term_state;
+ 			if (tmp) {
+ 				term = tmp;
+diff --git a/gama_tts/src/vtm_control_model/EventList.cpp b/gama_tts/src/vtm_control_model/EventList.cpp
+index 3d9455e..9fd0ef6 100644
+--- a/gama_tts/src/vtm_control_model/EventList.cpp
++++ b/gama_tts/src/vtm_control_model/EventList.cpp
+@@ -20,6 +20,8 @@
+ 
+ #include "EventList.h"
+ 
++#include <algorithm>
++
+ #include <cassert>
+ #include <cstring>
+ #include <limits> /* std::numeric_limits<double>::infinity() */
+@@ -825,6 +827,13 @@ EventList::prepareMacroIntonationInterpolation()
+ 
+ 	if (intonationPoints_.empty()) return;
+ 
++	// At high tempo a point's negative offset can place it before the previous
++	// point. Interpolating over a backward interval gives a cubic that diverges.
++	std::stable_sort(intonationPoints_.begin(), intonationPoints_.end(),
++			[](const IntonationPoint& a, const IntonationPoint& b) {
++				return a.absoluteTime() < b.absoluteTime();
++			});
++
+ 	Event* event1 = insertEvent(intonationPoints_[0].absoluteTime(), -1, 0.0, false);
+ 	if (!event1) {
+ 		THROW_EXCEPTION(MissingValueException, "Could not create event 1 for intonation.");
+@@ -968,12 +977,13 @@ EventList::generateOutput(std::vector<std::vector<float>>& vtmParamList)
+ 			// Straight line.
+ 			if (smoothIntonation_) {
+ 				const double y2 = x2 * (x2 * (x2 * data.a + data.b) + data.c) + data.d;
+-				pc = (y2 - y1) / x2;
+-				pd = y1;
++				// x2 is 0 when the first point falls in the first control period.
++				pc = (x2 > 0.0) ? (y2 - y1) / x2 : 0.0;
++				pd = (x2 > 0.0) ? y1 : y2;
+ 			} else {
+ 				const double y2 = x2 * data.a + data.b;
+-				pa = (y2 - y1) / x2;
+-				pb = y1;
++				pa = (x2 > 0.0) ? (y2 - y1) / x2 : 0.0;
++				pb = (x2 > 0.0) ? y1 : y2;
+ 			}
+ 		}
+ 	}

@@ -1,0 +1,180 @@
+Duplicate word: [articulate]
+Duplicate word: [associate]
+Duplicate word: [attribute]
+Duplicate word: [charro]
+Duplicate word: [combine]
+Duplicate word: [content]
+Duplicate word: [contrary]
+Duplicate word: [estimate]
+Duplicate word: [export]
+Duplicate word: [graduate]
+Duplicate word: [implant]
+Duplicate word: [imprint]
+Duplicate word: [incline]
+Duplicate word: [increase]
+Duplicate word: [indent]
+Duplicate word: [initiate]
+Duplicate word: [insert]
+Duplicate word: [insult]
+Duplicate word: [inter]
+Duplicate word: [intrigue]
+Duplicate word: [invite]
+Duplicate word: [la]
+Duplicate word: [mandate]
+Duplicate word: [moderate]
+Duplicate word: [object]
+Duplicate word: [overbid]
+Duplicate word: [overburden]
+Duplicate word: [overdose]
+Duplicate word: [overdose]
+Duplicate word: [overdress]
+Duplicate word: [overdress]
+Duplicate word: [overdrive]
+Duplicate word: [overhang]
+Duplicate word: [overhaul]
+Duplicate word: [overhaul]
+Duplicate word: [overlap]
+Duplicate word: [overlay]
+Duplicate word: [overlook]
+Duplicate word: [overman]
+Duplicate word: [overprint]
+Duplicate word: [override]
+Duplicate word: [overrun]
+Duplicate word: [oversize]
+Duplicate word: [overwork]
+Duplicate word: [re]
+1. The tab stops of the window as it opens, with MSAA's view of each
+  ok    the focus starts in the text box
+  ok    Tab comes back round to the text box after 15 stops
+      Edit               role='editable text'      name='Text to speak'                        value='Hello. This is GamaTTS, an articulatory speech synthesizer.' group=None
+      ComboBox           role='combo box'          name='Read as'                              value='Text' group=None
+      ComboBox           role='combo box'          name='Voice'                                value='Male' group=None
+      Button             role='push button'        name='Speak'                                value=None group=None
+      Button             role='push button'        name='Stop'                                 value=None group=None
+      Button             role='push button'        name='Save as WAV...'                       value=None group=None
+      Button             role='push button'        name='Show phonetic string'                 value=None group=None
+      Button             role='push button'        name='Use phonetic string as text'          value=None group=None
+      ComboBox           role='combo box'          name='Parameters for'                       value='Speech' group=None
+      Button             role='push button'        name='Reset all parameters'                 value=None group=None
+      Edit               role='editable text'      name='Tempo'                                value='1.00' group='Speech'
+      Edit               role='editable text'      name='Pitch offset (semitones)'             value='-4.0' group='Speech'
+      Edit               role='editable text'      name='Initial pitch (semitones)'            value='-20.0' group='Speech'
+      ComboBox           role='combo box'          name='Control period'                       value='4 ms' group='Speech'
+      Edit               role='editable text'      name='Phonetic string'                      value='' group=None
+  ok    every tab stop has a name
+  ok    no control is visited twice
+  ok    the tab stops are, in order: ['Text to speak', 'Read as', 'Voice', 'Speak', 'Stop', 'Save as WAV...', 'Show phonetic string', 'Use phonetic string as text', 'Parameters for', 'Reset all parameters', 'Tempo', 'Pitch offset (semitones)', 'Initial pitch (semitones)', 'Control period', 'Phonetic string']
+  ok    every tab stop has a description (what NVDA reads after the value)
+  ok    Shift+Tab from the text box goes to the last stop
+  ok    and one further back
+2. Every category, through Ctrl+1 ... Ctrl+7
+  ok    Ctrl+1 moves to 'Tempo' ('Tempo')
+  ok    the status names 'Speech': 'Parameters for Speech.'
+  ok    Speech: 4 fields, named with their units
+  ok    Speech: every field is in the group 'Speech' ({'Speech'})
+  ok    Speech: after its last field comes the phonetic string
+  ok    Ctrl+2 moves to 'Micro intonation' ('Micro intonation')
+  ok    the status names 'Intonation': 'Parameters for Intonation.'
+  ok    Intonation: 8 fields, named with their units
+  ok    Intonation: every field is in the group 'Intonation' ({'Intonation'})
+  ok    Intonation: after its last field comes the phonetic string
+  ok    Ctrl+3 moves to 'Glottal waveform' ('Glottal waveform')
+  ok    the status names 'Glottal source': 'Parameters for Glottal source.'
+  ok    Glottal source: 9 fields, named with their units
+  ok    Glottal source: every field is in the group 'Glottal source' ({'Glottal source'})
+  ok    Glottal source: after its last field comes the phonetic string
+  ok    Ctrl+4 moves to 'Tract length (cm)' ('Tract length (cm)')
+  ok    the status names 'Vocal tract': 'Parameters for Vocal tract.'
+  ok    Vocal tract: 15 fields, named with their units
+  ok    Vocal tract: every field is in the group 'Vocal tract' ({'Vocal tract'})
+  ok    Vocal tract: after its last field comes the phonetic string
+  ok    Ctrl+5 moves to 'Global nose radius coefficient' ('Global nose radius coefficient')
+  ok    the status names 'Nose': 'Parameters for Nose.'
+  ok    Nose: 7 fields, named with their units
+  ok    Nose: every field is in the group 'Nose' ({'Nose'})
+  ok    Nose: after its last field comes the phonetic string
+  ok    Ctrl+6 moves to 'Pulse-modulated noise' ('Pulse-modulated noise')
+  ok    the status names 'Noise': 'Parameters for Noise.'
+  ok    Noise: 5 fields, named with their units
+  ok    Noise: every field is in the group 'Noise' ({'Noise'})
+  ok    Noise: after its last field comes the phonetic string
+  ok    Ctrl+7 moves to 'Output sample rate' ('Output sample rate')
+  ok    the status names 'Output': 'Parameters for Output.'
+  ok    Output: 7 fields, named with their units
+  ok    Output: every field is in the group 'Output' ({'Output'})
+  ok    Output: after its last field comes the phonetic string
+  ok    55 fields in all: the 49 parameters and 6 output settings
+3. Number fields
+  ok    pitch offset reads as 'Pitch offset (semitones)', '-4.0'
+  ok    its description gives the range and default: "Added to the voice's reference glottal pitch. From -24.0 to 24.0 semitones. Default -4.0."
+  ok    Up steps to -3.5 ('-3.5')
+  ok    99 becomes 24.0 on leaving the field ('24.0')
+  ok    and the status says so, not the next field's help: 'Pitch offset (semitones): 99 is outside -24.0 to 24.0; set to 24.0.'
+  ok    Shift+Tab goes back to it
+  ok    letters reach the field, so that what was typed is what it says ('abc')
+  ok    and leaving it puts the value back ('24.0')
+  ok    and the status says so: 'Pitch offset (semitones): abc is not a number. It stays at 24.0.'
+  ok    Ctrl+R resets it to -4.0 ('-4.0')
+4. Voice
+  ok    Alt+V moves to Voice ('Voice')
+  ok    Down chooses Female ('Female')
+  ok    the female tract length, 15.0, is loaded ('15.0')
+  ok    Up goes back to Male
+5. Phonetic string
+  ok    Ctrl+P shows gama_text_to_phonetic's string: '/c // /0 # /w dh_uh /w /_k_w_i_k /w /_b_r_ah_uu_n /w /_f_o_k_s /w /_j_a_m_p_s /w /_uh_uu.v_uh_r /w dh_uh /w /_l_e_i.z_i /w /l /*d_o_g # // /c '
+  ok    and moves the focus to it
+6. Saving, against the golden traces of gama_tts
+  ok    Intonation drift and Random intonation are off
+  ok    saving with Loudness steady throughout
+  ok    status: 'Saved 3.5 s at 48000 Hz to <path>'
+  ok    its A-weighted level is the target, -22 dB: -22.00 dB, peak 20180
+  ok    Loudness is Steady throughout by default: {'role': 'combo box', 'role_id': 46, 'name': 'Loudness', 'value': 'Steady throughout', 'description': "Steady throughout: every syllable at the loudness target below, whatever its stress, pitch or vowel. Even per message: each utterance at the target, louder and softer syllables inside it as the engine makes them. The engine's own peaks: each utterance scaled to its own peak, so the loudness varies with the text. Default steady throughout."}
+  ok    Down arrow: 'Even per message'
+  ok    saving with Loudness even per message
+  ok    status: 'Saved 3.5 s at 48000 Hz to <path>'
+  ok    its A-weighted level is the target, -22 dB: -22.00 dB, peak 27561
+  ok    and it differs from steady throughout
+  ok    Down arrow again: "The engine's own peaks"
+  ok    Ctrl+S opens the save dialog, which takes a file name
+  ok    status: 'Saved 3.5 s at 48000 Hz to <path>'
+  ok    the WAV is 48000 Hz, 1 channel, 16-bit
+  ok    its 168273 samples are golden line 39's, byte for byte
+  ok    Ctrl+T opens the track dialog
+  ok    status: 'Saved the parameter track of 3.5 s at 48000 Hz, 88883 bytes, to <path>'
+  ok    the track is gama_tts -p's, byte for byte
+  ok    steady throughout holds one level inside: voiced frames move 0.25 dB (sd), against 2.46 as made
+  ok    Ctrl+U puts the phonetic string in the text box
+  ok    and sets Read as to Phonetic string
+  ok    saving again
+  ok    speaking the phonetic string gives the same samples
+7. Presets
+  ok    pitch offset -3.0 ('-3.0')
+  ok    Ctrl+Shift+S saves a preset
+  ok    the preset file was written
+  ok    and loudness = peak, loudness_target_db = -22
+  ok    it holds pitch_offset = -3, intonation_drift = 0 and voice = male
+  ok    Ctrl+R resets it
+  ok    Ctrl+O opens it
+  ok    and brings back -3.0: '-3.0', 'Opened test.gamapreset.'
+7b. Values that share a limit, which the status must explain
+  ok    on the fall time minimum ('Pulse fall time, minimum (%)')
+  ok    it reads 24.0 ('24.0')
+  ok    30 is above the maximum, so it stays at 24.0 ('24.0')
+  ok    and the status says why, not the next field's help: 'Pulse fall time, minimum (%): 30 is refused. The pulse fall time minimum may not pass the maximum. It...'
+  ok    20 is allowed ('20.0')
+  ok    saving a preset after typing a value
+  ok    and the typed value reached the engine, as 20
+  ok    opening a preset with the minimum before the maximum
+  ok    it takes every value in the end: '40.0', 'Opened limits.gamapreset.'
+  ok    Ctrl+R puts it back
+8. Speaking (at volume 0), stopping, closing
+  ok    volume 0 ('0')
+  ok    saving at volume 0
+  ok    and that WAV is silent, so the speakers will be
+  ok    Ctrl+Enter speaks: 'Speaking, 0.8 s at 48000 Hz.'
+  ok    and finishes: 'Done.'
+  ok    Esc stops: 'Stopped.'
+  ok    and nothing finishes after it: 'Stopped.'
+  ok    closes cleanly (exit code 0)
+
+109 checks, 0 failed

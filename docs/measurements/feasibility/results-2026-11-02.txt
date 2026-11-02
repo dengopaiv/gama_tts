@@ -1,0 +1,605 @@
+### git: b108ad6; corpus: 184 lines including blanks; words: 18597; sample: 930
+
+### 1. Load time per voice, the second of two loads
+0_male           rate= 48000 int= 20034.0 load(model+ctl)=   6.3ms parser+dict=  51.7ms variant=male period=4 pitchOff=-4
+0_female         rate= 48000 int= 23373.0 load(model+ctl)=   6.2ms parser+dict=  50.6ms variant=female period=4 pitchOff=-4
+1_male           rate= 48000 int= 20034.0 load(model+ctl)=   6.1ms parser+dict=  50.0ms variant=male period=4 pitchOff=-4
+2_male           rate= 48000 int= 20034.0 load(model+ctl)=   5.9ms parser+dict=  52.0ms variant=male period=4 pitchOff=-4
+3_male           rate= 48000 int= 60102.0 load(model+ctl)=   6.3ms parser+dict=  53.9ms variant=male period=4 pitchOff=-4
+4_male           rate= 48000 int= 60102.0 load(model+ctl)=   6.5ms parser+dict=  51.7ms variant=male period=4 pitchOff=-4
+5_male           rate= 48000 int= 60411.4 load(model+ctl)=   5.6ms parser+dict=  51.1ms variant=male period=4 pitchOff=-4
+5_female         rate= 48000 int= 70480.0 load(model+ctl)=   5.7ms parser+dict=  51.1ms variant=female period=4 pitchOff=-4
+5_large_child    rate= 48000 int= 84576.0 load(model+ctl)=   5.4ms parser+dict=  49.1ms variant=large_child period=4 pitchOff=-4
+5_small_child    rate= 48000 int=105720.0 load(model+ctl)=   5.4ms parser+dict=  51.5ms variant=small_child period=4 pitchOff=-4
+5_baby           rate= 48000 int=140960.0 load(model+ctl)=   5.4ms parser+dict=  53.0ms variant=baby period=4 pitchOff=-4
+rss=6.0 MB
+
+### 2. Speed: corpus, tempo 1, randomness off, best of three; run alone
+0_male t=1.00 p=+0     ok= 182 fail=   2 nan=0 silent=0 audio=  477.0s cpu=    2942ms rtf= 162.1 maxUtt=    43ms
+0_male t=1.00 p=+0     ok= 182 fail=   2 nan=0 silent=0 audio=  477.0s cpu=    2811ms rtf= 169.7 maxUtt=    40ms
+0_male t=1.00 p=+0     ok= 182 fail=   2 nan=0 silent=0 audio=  477.0s cpu=    2956ms rtf= 161.3 maxUtt=    41ms
+4_male t=1.00 p=+0     ok= 182 fail=   2 nan=0 silent=0 audio=  476.8s cpu=    7874ms rtf=  60.6 maxUtt=   116ms
+4_male t=1.00 p=+0     ok= 182 fail=   2 nan=0 silent=0 audio=  476.8s cpu=    8009ms rtf=  59.5 maxUtt=   115ms
+4_male t=1.00 p=+0     ok= 182 fail=   2 nan=0 silent=0 audio=  476.8s cpu=    7947ms rtf=  60.0 maxUtt=   116ms
+5_male t=1.00 p=+0     ok= 182 fail=   2 nan=0 silent=0 audio=  478.4s cpu=    7038ms rtf=  68.0 maxUtt=    99ms
+5_male t=1.00 p=+0     ok= 182 fail=   2 nan=0 silent=0 audio=  478.4s cpu=    7273ms rtf=  65.8 maxUtt=   110ms
+5_male t=1.00 p=+0     ok= 182 fail=   2 nan=0 silent=0 audio=  478.4s cpu=    6947ms rtf=  68.9 maxUtt=   103ms
+5_female t=1.00 p=+0   ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=    8930ms rtf=  53.5 maxUtt=   116ms
+5_female t=1.00 p=+0   ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=    7949ms rtf=  60.1 maxUtt=   109ms
+5_female t=1.00 p=+0   ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=    8015ms rtf=  59.6 maxUtt=   113ms
+5_large_child t=1.00 p=+0 ok= 182 fail=   2 nan=0 silent=0 audio=  477.3s cpu=   11206ms rtf=  42.6 maxUtt=   160ms
+5_large_child t=1.00 p=+0 ok= 182 fail=   2 nan=0 silent=0 audio=  477.3s cpu=   10498ms rtf=  45.5 maxUtt=   211ms
+5_large_child t=1.00 p=+0 ok= 182 fail=   2 nan=0 silent=0 audio=  477.3s cpu=    9235ms rtf=  51.7 maxUtt=   138ms
+5_small_child t=1.00 p=+0 ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=   12406ms rtf=  38.5 maxUtt=   166ms
+5_small_child t=1.00 p=+0 ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=   12899ms rtf=  37.0 maxUtt=   194ms
+5_small_child t=1.00 p=+0 ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=   13941ms rtf=  34.3 maxUtt=   178ms
+5_baby t=1.00 p=+0     ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=   17523ms rtf=  27.3 maxUtt=   239ms
+5_baby t=1.00 p=+0     ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=   19264ms rtf=  24.8 maxUtt=   286ms
+5_baby t=1.00 p=+0     ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=   17915ms rtf=  26.7 maxUtt=   216ms
+
+### 3. Unchanged engine, full synthesis, corpus: tempo against failures
+5_male t=1.00          ok= 182 fail=   2 nan=0 silent=0 audio=  478.4s cpu=    7895ms rtf=  60.6 maxUtt=   101ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_male t=2.00          ok= 182 fail=   2 nan=0 silent=0 audio=  249.4s cpu=    4253ms rtf=  58.6 maxUtt=    74ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_male t=3.00          ok= 182 fail=   2 nan=0 silent=0 audio=  173.0s cpu=    2791ms rtf=  62.0 maxUtt=    37ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_male t=3.80          ok= 182 fail=   2 nan=0 silent=0 audio=  140.9s cpu=    2691ms rtf=  52.4 maxUtt=    58ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_male t=3.90          ok= 182 fail=   2 nan=0 silent=0 audio=  137.8s cpu=    2516ms rtf=  54.8 maxUtt=    44ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_male t=4.00          ok= 182 fail=   2 nan=0 silent=0 audio=  134.8s cpu=    1989ms rtf=  67.8 maxUtt=    27ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_male t=5.00          ok= 182 fail=   2 nan=0 silent=3 audio=  112.1s cpu=    1734ms rtf=  64.7 maxUtt=    44ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_male t=6.00          ok= 182 fail=   2 nan=0 silent=4 audio=   96.6s cpu=    1728ms rtf=  55.9 maxUtt=    37ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_male t=8.00          ok= 182 fail=   2 nan=0 silent=5 audio=   77.6s cpu=    1939ms rtf=  40.0 maxUtt=    60ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_male t=10.00         ok= 178 fail=   6 nan=0 silent=6 audio=   64.7s cpu=    1928ms rtf=  33.5 maxUtt=   107ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+       4 x The time interval between two postures is too small. Try reducing the tempo. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+      e.g. [Muscle, muscular; goal and iron;]
+      e.g. [Golf, wolf; countenants; lieutenants]
+
+### 4. Unchanged engine, model 0: each tempo in its own process; exit 139 or 127 is a crash
+0_male tempo 3: exit 0, 186 lines of output, last: 183 [My advice is ... give it up!] ok n=35523 dur=0.740 pk=0
+0_male tempo 3.8: exit 0, 186 lines of output, last: 183 [My advice is ... give it up!] ok n=29197 dur=0.608 pk=0
+docs/measurements/feasibility/run_feasibility.sh: line 48:  1308 Segmentation fault         "$P" lines "$D" 0_male "$C" $t 0 > tmp.txt 2>&1
+0_male tempo 3.9: exit 139, 18 lines of output, last:  18 [OK] 
+docs/measurements/feasibility/run_feasibility.sh: line 48:  1314 Segmentation fault         "$P" lines "$D" 0_male "$C" $t 0 > tmp.txt 2>&1
+0_male tempo 4: exit 139, 18 lines of output, last:  18 [OK] 
+0_male tempo 5: exit 0, 186 lines of output, last: 183 [My advice is ... give it up!] ok n=23639 dur=0.492 pk=0
+docs/measurements/feasibility/run_feasibility.sh: line 48:  1326 Segmentation fault         "$P" lines "$D" 0_male "$C" $t 0 > tmp.txt 2>&1
+0_male tempo 6: exit 139, 8 lines of output, last:   8 [100] 
+docs/measurements/feasibility/run_feasibility.sh: line 48:  1332 Segmentation fault         "$P" lines "$D" 0_male "$C" $t 0 > tmp.txt 2>&1
+0_male tempo 8: exit 139, 7 lines of output, last:   7 [42] 
+
+### 5. Unchanged engine, rule engine only: pitch tracks over the corpus
+params: microInt[-10,10] glotVol[0,60] aspVol[0,60] fricVol[0,60] fricPos[0,7] fricCF[100,20000] fricBW[250,20000] r1[0,3] r2[0,3] r3[0,3] r4[0,3] r5[0,3] r6[0,3] r7[0,3] r8[0,3] velum[0,1.5]
+t= 1.00 utt=  182 exc=   2 badUtt=   0 wildPitchUtt=   0 frames= 119410 nonfinite=      0 pitch=[-36.0, -6.0]
+t= 2.00 utt=  182 exc=   2 badUtt=   0 wildPitchUtt=   0 frames=  62229 nonfinite=      0 pitch=[-36.0, -6.5]
+t= 3.00 utt=  182 exc=   2 badUtt=   0 wildPitchUtt=   0 frames=  43149 nonfinite=      0 pitch=[-36.0, -6.6]
+t= 3.80 utt=  182 exc=   2 badUtt=   0 wildPitchUtt=   0 frames=  35160 nonfinite=      0 pitch=[-36.0, -6.6]
+t= 3.90 utt=  182 exc=   2 badUtt=   0 wildPitchUtt=  20 frames=  34370 nonfinite=      0 pitch=[-95482.0, 210827.6]
+     e.g. [a]
+     e.g. [A]
+     e.g. [I]
+     e.g. [OK]
+     e.g. [Edit, multi line]
+     e.g. [e-mail]
+t= 4.00 utt=  182 exc=   2 badUtt=   0 wildPitchUtt=  20 frames=  33634 nonfinite=      0 pitch=[-86095.0, 184218.8]
+     e.g. [a]
+     e.g. [A]
+     e.g. [I]
+     e.g. [OK]
+     e.g. [Edit, multi line]
+     e.g. [e-mail]
+t= 5.00 utt=  182 exc=   2 badUtt=  20 wildPitchUtt=  14 frames=  27962 nonfinite=     40 pitch=[-5229.8, 13219.9] microInt:40
+     e.g. [a]
+     e.g. [A]
+     e.g. [I]
+     e.g. [OK]
+     e.g. [Edit, multi line]
+     e.g. [e-mail]
+t= 6.00 utt=  182 exc=   2 badUtt=  20 wildPitchUtt=  37 frames=  24091 nonfinite=     40 pitch=[-7529.8, 76783.3] microInt:40
+     e.g. [a]
+     e.g. [A]
+     e.g. [I]
+     e.g. [100]
+     e.g. [1,000]
+     e.g. [OK]
+t= 8.00 utt=  182 exc=   2 badUtt= 109 wildPitchUtt=  93 frames=  19338 nonfinite=    216 pitch=[-9140.8, 19230.6] microInt:216
+     e.g. [a]
+     e.g. [A]
+     e.g. [I]
+     e.g. [1]
+     e.g. [42]
+     e.g. [100]
+t=10.00 utt=  178 exc=   6 badUtt= 145 wildPitchUtt=  92 frames=  16114 nonfinite=    286 pitch=[-3182.0, 10006.2] microInt:286
+     e.g. [a]
+     e.g. [b]
+     e.g. [z]
+     e.g. [A]
+     e.g. [I]
+     e.g. [1]
+
+### 6. Unchanged engine, rule engine only: every fourth dictionary word
+params: microInt[-10,10] glotVol[0,60] aspVol[0,60] fricVol[0,60] fricPos[0,7] fricCF[100,20000] fricBW[250,20000] r1[0,3] r2[0,3] r3[0,3] r4[0,3] r5[0,3] r6[0,3] r7[0,3] r8[0,3] velum[0,1.5]
+t= 1.00 utt=18596 exc=   1 badUtt=   0 wildPitchUtt=   0 frames=4735362 nonfinite=      0 pitch=[-36.3, -5.2]
+t= 2.00 utt=18596 exc=   1 badUtt=   0 wildPitchUtt=   0 frames=2637401 nonfinite=      0 pitch=[-37.0, -6.6]
+t= 3.00 utt=18596 exc=   1 badUtt=   0 wildPitchUtt=   0 frames=1937368 nonfinite=      0 pitch=[-37.7, -6.8]
+t= 3.50 utt=18596 exc=   1 badUtt=   0 wildPitchUtt=   0 frames=1740319 nonfinite=      0 pitch=[-37.6, -6.9]
+t= 3.85 utt=18596 exc=   1 badUtt=   0 wildPitchUtt=   0 frames=1629505 nonfinite=      0 pitch=[-37.3, -7.0]
+t= 3.90 utt=18596 exc=   1 badUtt=   0 wildPitchUtt=1270 frames=1616713 nonfinite=      0 pitch=[-707251.8, 69820.1]
+     e.g. [abaci]
+     e.g. [abb]
+     e.g. [abbess]
+     e.g. [abbot]
+     e.g. [abdicant]
+     e.g. [abdomen]
+t= 4.00 utt=18596 exc=   1 badUtt=   0 wildPitchUtt=1270 frames=1589463 nonfinite=      0 pitch=[-670988.1, 61549.0]
+     e.g. [abaci]
+     e.g. [abb]
+     e.g. [abbess]
+     e.g. [abbot]
+     e.g. [abdicant]
+     e.g. [abdomen]
+
+### 7. Where it comes from: the word 'a' at either side of the threshold
+ph=/c // /0 # /w /l /*uh # // /c
+point abs=8.80 beat=8.80 semitone=2.000 slope=0.0200 rule=0
+point abs=9.42 beat=32.62 semitone=0.000 slope=0.0500 rule=1
+point abs=64.44 beat=64.44 semitone=-8.000 slope=0.0000 rule=2
+point abs=165.00 beat=165.00 semitone=-8.000 slope=0.0000 rule=4
+event#1 t=8 interp a=0.00010705 b=-0.012008 c=0.22157 d=-1.0589
+event#8 t=64 interp a=0 b=0 c=0 d=-8
+event#14 t=164 interp a=0 b=0 c=0 d=-8
+events=16 lastT=224
+0:-36.0 4:-26.0 8:-16.0 12:-15.9 16:-16.1 20:-16.6 24:-17.2 28:-17.9 32:-18.8 36:-19.6 
+40:-20.6 44:-21.4 48:-22.3 52:-23.0 56:-23.5 60:-23.9 64:-24.0 68:-24.0 72:-24.0 76:-24.0 
+80:-24.0 84:-24.0 88:-24.0 92:-24.0 96:-24.0 100:-24.0 104:-24.0 108:-24.0 112:-24.0 116:-24.0 
+120:-24.0 124:-24.0 128:-24.0 132:-24.0 136:-24.0 140:-24.0 144:-24.0 148:-24.0 152:-24.0 156:-24.0 
+160:-24.0 164:-24.0 168:-24.0 172:-24.0 176:-24.0 180:-24.0 184:-24.0 188:-24.0 192:-24.0 196:-24.0 
+200:-24.0 204:-24.0 208:-24.0 212:-24.0 216:-24.0 220:-24.0 
+ph=/c // /0 # /w /l /*uh # // /c
+point abs=8.57 beat=8.57 semitone=2.000 slope=0.0200 rule=0
+point abs=8.00 beat=31.43 semitone=0.000 slope=0.0500 rule=1
+point abs=62.15 beat=62.15 semitone=-8.000 slope=0.0000 rule=2
+point abs=162.00 beat=162.00 semitone=-8.000 slope=0.0000 rule=4
+event#1 t=4 interp a=0.00010705 b=-0.010723 c=0.13065 d=-0.35787
+event#2 t=8 interp a=-0.058125 b=1.0425 c=-5.5 d=9.04
+event#9 t=60 interp a=0 b=0 c=0 d=-8
+event#14 t=160 interp a=0 b=0 c=0 d=-8
+events=16 lastT=220
+0:-36.0 4:-16.0 8:-14.0 12:-23.3 16:-66.2 20:-165.0 24:-342.0 28:-619.6 32:-1020.1 36:-1565.8 
+40:-2279.0 44:-3182.0 48:-4297.2 52:-5646.9 56:-7253.4 60:-24.0 64:-24.0 68:-24.0 72:-24.0 76:-24.0 
+80:-24.0 84:-24.0 88:-24.0 92:-24.0 96:-24.0 100:-24.0 104:-24.0 108:-24.0 112:-24.0 116:-24.0 
+120:-24.0 124:-24.0 128:-24.0 132:-24.0 136:-24.0 140:-24.0 144:-24.0 148:-24.0 152:-24.0 156:-24.0 
+160:-24.0 164:-24.0 168:-24.0 172:-24.0 176:-24.0 180:-24.0 184:-24.0 188:-24.0 192:-24.0 196:-24.0 
+200:-24.0 204:-24.0 208:-24.0 212:-24.0 216:-24.0 
+
+### 8. With engine-fixes.patch: dictionary, rule engine only
+params: microInt[-10,10] glotVol[0,60] aspVol[0,60] fricVol[0,60] fricPos[0,7] fricCF[100,20000] fricBW[250,20000] r1[0,3] r2[0,3] r3[0,3] r4[0,3] r5[0,3] r6[0,3] r7[0,3] r8[0,3] velum[0,1.5]
+t= 1.00 utt=18596 exc=   1 badUtt=   0 wildPitchUtt=   0 frames=4735362 nonfinite=      0 pitch=[-36.3, -5.2]
+t= 2.00 utt=18596 exc=   1 badUtt=   0 wildPitchUtt=   0 frames=2637401 nonfinite=      0 pitch=[-37.0, -6.6]
+t= 3.00 utt=18596 exc=   1 badUtt=   0 wildPitchUtt=   0 frames=1937368 nonfinite=      0 pitch=[-37.7, -6.8]
+t= 3.85 utt=18596 exc=   1 badUtt=   0 wildPitchUtt=   0 frames=1629505 nonfinite=      0 pitch=[-37.3, -7.0]
+t= 3.90 utt=18596 exc=   1 badUtt=   0 wildPitchUtt=   0 frames=1616713 nonfinite=      0 pitch=[-37.5, -7.0]
+t= 4.00 utt=18596 exc=   1 badUtt=   0 wildPitchUtt=   0 frames=1589463 nonfinite=      0 pitch=[-37.4, -7.0]
+t= 5.00 utt=18596 exc=   1 badUtt=   0 wildPitchUtt=   0 frames=1380795 nonfinite=      0 pitch=[-37.9, -6.9]
+t= 6.00 utt=18596 exc=   1 badUtt=   0 wildPitchUtt=   0 frames=1237779 nonfinite=      0 pitch=[-37.7, -6.8]
+t= 8.00 utt=18585 exc=  12 badUtt=   0 wildPitchUtt=   0 frames=1063847 nonfinite=      0 pitch=[-37.7, -6.6]
+t=10.00 utt=17929 exc= 668 badUtt=   0 wildPitchUtt=   0 frames= 923690 nonfinite=      0 pitch=[-37.6, -6.9]
+
+### 9. With the patch: full synthesis, corpus
+0_male t=1.00          ok= 182 fail=   2 nan=0 silent=0 audio=  477.0s cpu=    2943ms rtf= 162.1 maxUtt=    41ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+0_male t=3.80          ok= 182 fail=   2 nan=0 silent=0 audio=  140.6s cpu=    1513ms rtf=  92.9 maxUtt=    43ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+0_male t=4.00          ok= 182 fail=   2 nan=0 silent=0 audio=  134.5s cpu=    1323ms rtf= 101.7 maxUtt=    21ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+0_male t=5.00          ok= 182 fail=   2 nan=0 silent=0 audio=  111.9s cpu=     707ms rtf= 158.2 maxUtt=     9ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+0_male t=6.00          ok= 182 fail=   2 nan=0 silent=0 audio=   96.4s cpu=     617ms rtf= 156.3 maxUtt=     8ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+0_male t=8.00          ok= 182 fail=   2 nan=0 silent=0 audio=   77.4s cpu=     476ms rtf= 162.7 maxUtt=     5ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+0_male t=10.00         ok= 178 fail=   6 nan=0 silent=0 audio=   64.6s cpu=     424ms rtf= 152.2 maxUtt=     5ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+       4 x The time interval between two postures is too small. Try reducing the tempo. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+      e.g. [Muscle, muscular; goal and iron;]
+      e.g. [Golf, wolf; countenants; lieutenants]
+5_male t=1.00          ok= 182 fail=   2 nan=0 silent=0 audio=  478.4s cpu=    7634ms rtf=  62.7 maxUtt=   125ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_male t=3.80          ok= 182 fail=   2 nan=0 silent=0 audio=  140.9s cpu=    2017ms rtf=  69.9 maxUtt=    26ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_male t=4.00          ok= 182 fail=   2 nan=0 silent=0 audio=  134.8s cpu=    1979ms rtf=  68.1 maxUtt=    27ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_male t=5.00          ok= 182 fail=   2 nan=0 silent=0 audio=  112.1s cpu=    1577ms rtf=  71.1 maxUtt=    21ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_male t=6.00          ok= 182 fail=   2 nan=0 silent=0 audio=   96.6s cpu=    1377ms rtf=  70.2 maxUtt=    17ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_male t=8.00          ok= 182 fail=   2 nan=0 silent=0 audio=   77.6s cpu=    1096ms rtf=  70.8 maxUtt=    14ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_male t=10.00         ok= 178 fail=   6 nan=0 silent=0 audio=   64.7s cpu=     924ms rtf=  69.9 maxUtt=    11ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+       4 x The time interval between two postures is too small. Try reducing the tempo. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+      e.g. [Muscle, muscular; goal and iron;]
+      e.g. [Golf, wolf; countenants; lieutenants]
+
+### 10. With the patch: full synthesis, dictionary sample
+5_male t=1.00          ok= 930 fail=   0 nan=0 silent=0 audio=  952.1s cpu=   14217ms rtf=  67.0 maxUtt=    33ms
+5_male t=3.00          ok= 930 fail=   0 nan=0 silent=0 audio=  389.6s cpu=    5390ms rtf=  72.3 maxUtt=    13ms
+5_male t=4.00          ok= 930 fail=   0 nan=0 silent=0 audio=  319.6s cpu=    4422ms rtf=  72.3 maxUtt=     8ms
+5_female t=1.00        ok= 930 fail=   0 nan=0 silent=0 audio=  950.9s cpu=   15092ms rtf=  63.0 maxUtt=    30ms
+5_female t=3.00        ok= 930 fail=   0 nan=0 silent=0 audio=  389.1s cpu=    6303ms rtf=  61.7 maxUtt=    14ms
+5_female t=4.00        ok= 930 fail=   0 nan=0 silent=0 audio=  319.2s cpu=    5085ms rtf=  62.8 maxUtt=    13ms
+0_male t=1.00          ok= 930 fail=   0 nan=0 silent=0 audio=  949.6s cpu=    5533ms rtf= 171.6 maxUtt=    12ms
+0_male t=3.00          ok= 930 fail=   0 nan=0 silent=0 audio=  389.0s cpu=    2357ms rtf= 165.0 maxUtt=     6ms
+0_male t=4.00          ok= 930 fail=   0 nan=0 silent=0 audio=  319.2s cpu=    1889ms rtf= 169.0 maxUtt=     3ms
+
+### 11. Does the patch change anything at ordinary tempos? WAVs compared byte for byte
+5_male tempo 1: compared 182, differ 0
+5_male tempo 2: compared 182, differ 0
+5_male tempo 3: compared 182, differ 0
+5_male tempo 3.5: compared 182, differ 0
+0_male tempo 1: compared 182, differ 0
+0_male tempo 2: compared 182, differ 0
+0_male tempo 3: compared 182, differ 0
+0_male tempo 3.5: compared 182, differ 0
+
+### 12. Repeatability, threads, memory
+5_male samples=168273 same-engine maxdiff=0 fresh-vs-first maxdiff=0
+5_male threads: 60 utterances, 0 differ from sequential
+0_male samples=167778 same-engine maxdiff=0 fresh-vs-first maxdiff=0
+0_male threads: 60 utterances, 0 differ from sequential
+5_female samples=168075 same-engine maxdiff=0 fresh-vs-first maxdiff=0
+5_female threads: 60 utterances, 0 differ from sequential
+round   0 rss=18.9 MB
+round   5 rss=19.0 MB
+round  10 rss=19.0 MB
+round  15 rss=19.0 MB
+5_male                 ok=2912 fail=  32 nan=0 silent=0 audio= 7655.1s cpu=  107029ms rtf=  71.5 maxUtt=   129ms
+      32 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+      e.g. [*]
+      e.g. [...]
+
+### 13. Pitch against the tube
+5_male p=-24           ok= 182 fail=   2 nan=0 silent=0 audio=  478.4s cpu=    7498ms rtf=  63.8 maxUtt=   111ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_male p=-12           ok= 182 fail=   2 nan=0 silent=0 audio=  478.4s cpu=    7539ms rtf=  63.5 maxUtt=    96ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_male p=+12           ok= 182 fail=   2 nan=0 silent=0 audio=  478.4s cpu=    6734ms rtf=  71.1 maxUtt=   101ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_male p=+24           ok= 182 fail=   2 nan=0 silent=0 audio=  478.4s cpu=    6825ms rtf=  70.1 maxUtt=    96ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_female p=-24         ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=    7719ms rtf=  61.9 maxUtt=   111ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_female p=-12         ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=    7628ms rtf=  62.7 maxUtt=   107ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_female p=+12         ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=    7697ms rtf=  62.1 maxUtt=   106ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_female p=+24         ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=    7689ms rtf=  62.2 maxUtt=   104ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_large_child p=-24    ok= 182 fail=   2 nan=0 silent=0 audio=  477.3s cpu=    9189ms rtf=  51.9 maxUtt=   135ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_large_child p=-12    ok= 182 fail=   2 nan=0 silent=0 audio=  477.3s cpu=    9177ms rtf=  52.0 maxUtt=   133ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_large_child p=+12    ok= 182 fail=   2 nan=0 silent=0 audio=  477.3s cpu=    9052ms rtf=  52.7 maxUtt=   130ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_large_child p=+24    ok= 182 fail=   2 nan=0 silent=0 audio=  477.3s cpu=    8999ms rtf=  53.0 maxUtt=   132ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_small_child p=-24    ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=   11196ms rtf=  42.7 maxUtt=   160ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_small_child p=-12    ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=   11149ms rtf=  42.9 maxUtt=   159ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_small_child p=+12    ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=   10994ms rtf=  43.5 maxUtt=   156ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_small_child p=+24    ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=   11127ms rtf=  42.9 maxUtt=   168ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_baby p=-24           ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=   14629ms rtf=  32.7 maxUtt=   210ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_baby p=-12           ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=   14929ms rtf=  32.0 maxUtt=   251ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_baby p=+12           ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=   14508ms rtf=  32.9 maxUtt=   212ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+5_baby p=+24           ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=   14894ms rtf=  32.1 maxUtt=   210ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+0_male p=-24           ok= 182 fail=   2 nan=0 silent=0 audio=  477.0s cpu=    2748ms rtf= 173.6 maxUtt=    39ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+0_male p=-12           ok= 182 fail=   2 nan=0 silent=0 audio=  477.0s cpu=    2768ms rtf= 172.3 maxUtt=    40ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+0_male p=+12           ok= 182 fail=   2 nan=0 silent=0 audio=  477.0s cpu=    2796ms rtf= 170.6 maxUtt=    40ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+0_male p=+24           ok= 182 fail=   2 nan=0 silent=0 audio=  477.0s cpu=    2763ms rtf= 172.6 maxUtt=    38ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+4_male p=-24           ok= 182 fail=   2 nan=0 silent=0 audio=  476.8s cpu=    7516ms rtf=  63.4 maxUtt=   108ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+4_male p=-12           ok= 182 fail=   2 nan=0 silent=0 audio=  476.8s cpu=    7562ms rtf=  63.1 maxUtt=   105ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+4_male p=+12           ok= 182 fail=   2 nan=0 silent=0 audio=  476.8s cpu=    7389ms rtf=  64.5 maxUtt=   105ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+4_male p=+24           ok= 182 fail=   2 nan=0 silent=0 audio=  476.8s cpu=    7515ms rtf=  63.5 maxUtt=   110ms
+       2 x Invalid state: STATE_BEGIN. [file: <path>]
+      e.g. [*]
+      e.g. [...]
+
+### 14. A wrapper that owns the tube, with the engine unchanged
+own tube, same config: samples 168273 vs 168273, identical=1, tube ctor 0.18 ms
+own tube, breathiness 25 and tract 16 cm: samples 167837, differs=1, tube ctor 0.23 ms, whole render 55.6 ms
+controller reference_glottal_pitch -6: first track pitch moved -16.09 -> -10.09
+parse of '*' threw, as expected
+after 2 engine exceptions, next utterance identical=1
+own tube, same config: samples 167778 vs 167778, identical=1, tube ctor 0.21 ms
+own tube, breathiness 25 and tract 16 cm: samples 168733, differs=1, tube ctor 0.20 ms, whole render 22.1 ms
+controller reference_glottal_pitch -6: first track pitch moved -16.09 -> -10.09
+parse of '*' threw, as expected
+after 2 engine exceptions, next utterance identical=1
+
+### 15. Which keys reach the sound (the probe overrides tempo and randomness: see section 16)
+baseline: (0, '5_male 335750 samples 6.995 s')
+file     key                                      from         to  result
+control  control_period                              4          2  changes the sound
+control  variant_name                             male     female  changes the sound
+control  tempo                                     1.0       1.15  no effect
+control  initial_pitch                           -20.0      -23.0  changes the sound
+control  pitch_offset                             -4.0       -4.6  changes the sound
+control  drift_deviation                           4.0        4.6  no effect
+control  drift_lowpass_cutoff                      4.0        4.6  no effect
+control  micro_intonation                            1          0  changes the sound
+control  macro_intonation                            1          0  changes the sound
+control  smooth_intonation                           1          0  changes the sound
+control  intonation_drift                            1          0  no effect
+control  random_intonation                           1          0  no effect
+control  notional_pitch                            2.0        2.3  no effect
+control  pretonic_pitch_range                     -2.0       -2.3  no effect
+control  pretonic_perturbation_range               4.0        4.6  no effect
+control  tonic_pitch_range                        -8.0       -9.2  no effect
+control  tonic_perturbation_range                  4.0        4.6  no effect
+control  phonetic_string_format              gnuspeech          -  skipped
+vtm      model                                       5          -  skipped
+vtm      output_rate                           48000.0    44100.0  changes the sound
+vtm      waveform                                    0          1  changes the sound
+vtm      vocal_tract_length_offset                 0.0        1.0  changes the sound
+vtm      temperature                              35.0      40.25  changes the sound
+vtm      noise_modulation                            1          0  changes the sound
+vtm      bypass                                      0          1  changes the sound
+vtm      log_parameters                          false       true  no effect
+variant  vocal_tract_length                       17.5     20.125  changes the sound
+variant  glottal_pulse_tp                         40.0       46.0  changes the sound
+variant  glottal_pulse_tn_min                     24.0 27.599999999999998  FAILED rc=3221226505: 
+variant  glottal_pulse_tn_max                     24.0 27.599999999999998  changes the sound
+variant  reference_glottal_pitch                 -12.0 -13.799999999999999  changes the sound
+variant  breathiness                               5.0       5.75  changes the sound
+variant  nasal_radius_2                           1.35     1.5525  changes the sound
+variant  nasal_radius_3                           1.83     2.1045  changes the sound
+variant  nasal_radius_4                           1.94      2.231  changes the sound
+variant  nasal_radius_5                           1.72 1.9779999999999998  changes the sound
+variant  nasal_radius_6                            1.3 1.4949999999999999  changes the sound
+variant  nasal_radius_7                           0.73 0.8394999999999999  changes the sound
+variant  global_nasal_radius_coef                  1.0       1.15  changes the sound
+variant  radius_1_coef                             1.0       1.15  changes the sound
+variant  radius_2_coef                             1.0       1.15  changes the sound
+variant  radius_3_coef                             1.0       1.15  changes the sound
+variant  radius_4_coef                             1.0       1.15  changes the sound
+variant  radius_5_coef                             1.0       1.15  changes the sound
+variant  radius_6_coef                             1.0       1.15  changes the sound
+variant  radius_7_coef                             1.0       1.15  changes the sound
+variant  radius_8_coef                             1.0       1.15  changes the sound
+variant  global_radius_coef                        1.0       1.15  changes the sound
+variant  loss_factor                               0.4 0.45999999999999996  changes the sound
+variant  mix_offset                               48.0 55.199999999999996  changes the sound
+variant  glottal_noise_cutoff                    400.0 459.99999999999994  changes the sound
+variant  frication_noise_cutoff                 5500.0 6324.999999999999  changes the sound
+variant  frication_factor                          1.0       1.15  changes the sound
+variant  min_glottal_loss                          0.0        1.0  changes the sound
+variant  max_glottal_loss                          2.0        2.3  changes the sound
+variant  glottal_lowpass_cutoff                 4000.0     4600.0  changes the sound
+variant  intonation_factor                         1.0       1.15  changes the sound
+variant  constant_radius_mouth_impedance         false       true  changes the sound
+variant  mouth_impedance_radius                    2.0        2.3  no effect
+reach the sound: 44; no effect: 12
+baseline: (0, '0_male 334727 samples 6.973 s')
+file     key                                      from         to  result
+control  control_period                              4          2  changes the sound
+control  variant_name                             male     female  changes the sound
+control  tempo                                     1.0       1.15  no effect
+control  initial_pitch                           -20.0      -23.0  changes the sound
+control  pitch_offset                             -4.0       -4.6  changes the sound
+control  drift_deviation                           4.0        4.6  no effect
+control  drift_lowpass_cutoff                      4.0        4.6  no effect
+control  micro_intonation                            1          0  changes the sound
+control  macro_intonation                            1          0  changes the sound
+control  smooth_intonation                           1          0  changes the sound
+control  intonation_drift                            1          0  no effect
+control  random_intonation                           1          0  no effect
+control  notional_pitch                            2.0        2.3  no effect
+control  pretonic_pitch_range                     -2.0       -2.3  no effect
+control  pretonic_perturbation_range               4.0        4.6  no effect
+control  tonic_pitch_range                        -8.0       -9.2  no effect
+control  tonic_perturbation_range                  4.0        4.6  no effect
+control  phonetic_string_format              gnuspeech          -  skipped
+vtm      model                                       0          -  skipped
+vtm      output_rate                           48000.0    44100.0  changes the sound
+vtm      waveform                                    0          1  changes the sound
+vtm      vocal_tract_length_offset                 0.0        1.0  changes the sound
+vtm      temperature                              32.0       36.8  changes the sound
+vtm      loss_factor                               0.8 0.9199999999999999  changes the sound
+vtm      mouth_coefficient                      5000.0     5750.0  changes the sound
+vtm      nose_coefficient                       5000.0     5750.0  changes the sound
+vtm      throat_cutoff                          1500.0 1724.9999999999998  changes the sound
+vtm      throat_volume                             6.0 6.8999999999999995  changes the sound
+vtm      noise_modulation                            1          0  changes the sound
+vtm      mix_offset                               48.0 55.199999999999996  changes the sound
+variant  vocal_tract_length                       17.5     20.125  changes the sound
+variant  glottal_pulse_tp                         40.0       46.0  changes the sound
+variant  glottal_pulse_tn_min                     24.0 27.599999999999998  changes the sound
+variant  glottal_pulse_tn_max                     24.0 27.599999999999998  changes the sound
+variant  reference_glottal_pitch                 -12.0 -13.799999999999999  changes the sound
+variant  breathiness                               0.5      0.575  changes the sound
+variant  aperture_radius                          3.05 3.5074999999999994  changes the sound
+variant  nasal_radius_1                           1.35     1.5525  changes the sound
+variant  nasal_radius_2                           1.96      2.254  changes the sound
+variant  nasal_radius_3                           1.91     2.1965  changes the sound
+variant  nasal_radius_4                            1.3 1.4949999999999999  changes the sound
+variant  nasal_radius_5                           0.73 0.8394999999999999  changes the sound
+variant  global_nasal_radius_coef                  1.0       1.15  changes the sound
+variant  radius_1_coef                             1.0       1.15  changes the sound
+variant  radius_2_coef                             1.0       1.15  changes the sound
+variant  radius_3_coef                             1.0       1.15  changes the sound
+variant  radius_4_coef                             1.0       1.15  changes the sound
+variant  radius_5_coef                             1.0       1.15  changes the sound
+variant  radius_6_coef                             1.0       1.15  changes the sound
+variant  radius_7_coef                             1.0       1.15  changes the sound
+variant  radius_8_coef                             1.0       1.15  changes the sound
+variant  global_radius_coef                        1.0       1.15  changes the sound
+variant  intonation_factor                         1.0       1.15  changes the sound
+reach the sound: 41; no effect: 10
+
+### 16. The keys section 15 cannot see: configuration as written, random intonation off
+drift on, random off: repeatable
+tempo = 1.15: changes the sound
+drift_deviation = 4.6: changes the sound
+drift_lowpass_cutoff = 4.6: changes the sound
+intonation_drift = 0: changes the sound
+notional_pitch = 2.3: no effect
+random_intonation = 1: differs from run to run
+
+### 17. Level, spectral balance, edge silence
+182 corpus lines; randomness off; every synthesizer peak-normalised per utterance as shipped
+== corpus; bands in dB against the A-weighted level; edges in ms (median, -60 dBFS)
+                      A dB     sd    <500    1-4k   4-10k    lead   trail   peak     Hz
+Gnuspeech male       -19.9   1.10     8.2    -6.8   -16.7     121     188  0.950  44100
+0_male               -19.9   1.11     7.8    -6.8   -17.0     121     185  0.950  48000
+4_male               -19.8   1.13     7.1    -7.5   -18.5     121     183  0.950  48000
+5_male               -20.3   1.42     4.6    -6.7   -13.6     126     185  0.950  48000
+0_female             -16.3   1.11     4.6    -7.6   -17.4     121     184  0.950  48000
+5_female             -16.6   1.26     3.1    -7.1   -19.9     124     185  0.950  48000
+5_large_child        -15.1   1.14     0.4    -7.1   -20.6     125     184  0.950  48000
+5_small_child        -13.8   1.19    -2.3    -6.4   -19.3     122     182  0.950  48000
+5_baby               -13.2   1.15    -4.0    -4.2   -18.5     121     182  0.950  48000
+== the menu words, against eSpeak klatt5 (the file made for GnuspeechSA-NVDA docs/12)
+                      A dB     sd    <500    1-4k   4-10k    lead   trail   peak     Hz
+eSpeak klatt5        -21.5   0.00     1.2    -5.9   -15.2      12     307  1.000  22050
+Gnuspeech male       -19.8   1.12     9.0    -6.8   -15.6     118     187  0.950  44100
+0_male               -19.8   1.34     8.3    -6.6   -16.3     121     180  0.950  48000
+5_male               -19.0   1.40     5.6    -6.9   -12.6     124     180  0.950  48000
+5_female             -16.1   1.04     3.7    -7.2   -19.5     124     184  0.950  48000
+
+### 18. The shipped Gnuspeech DLL through the same tempos
+tempo 1.0: exit=0 last: RESULT tempo=1.0 ok=182 fail=2 silent=0
+tempo 2.0: exit=0 last: RESULT tempo=2.0 ok=182 fail=2 silent=0
+tempo 3.0: exit=0 last: RESULT tempo=3.0 ok=182 fail=2 silent=0
+tempo 3.8: exit=0 last: RESULT tempo=3.8 ok=182 fail=2 silent=0
+tempo 4.0: exit=0 last: RESULT tempo=4.0 ok=182 fail=2 silent=0
+tempo 5.0: exit=0 last: RESULT tempo=5.0 ok=182 fail=2 silent=0
+tempo 6.0: exit=0 last: RESULT tempo=6.0 ok=182 fail=2 silent=0
+tempo 8.0: exit=0 last: RESULT tempo=8.0 ok=182 fail=2 silent=0
+tempo 10.0: exit=0 last: RESULT tempo=10.0 ok=182 fail=2 silent=0
+
+### done

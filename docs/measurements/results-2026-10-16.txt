@@ -1,0 +1,108 @@
+# Output of run_all.sh, 2026-10-16, Windows 11 x64
+# GAMA_EXE   = MinGW-w64 GCC 16.2.0 build of b108ad6 (Release)
+# GAMA_EXE_2 = MSVC 19.51 build of b108ad6 (Release, C++17, _USE_MATH_DEFINES)
+# GS_EXE, GS_TRM_EXE = unmodified GnuspeechSA 0.1.5 (539d75a), MSVC x64 build
+
+== 1. Data with LF line endings (see 06, the CRLF trap)
+== 2. Deterministic copies: random intonation and drift off
+== 3. Phonetic strings, GamaTTS against GnuspeechSA
+-- The quick brown fox jumps over the lazy dog.
+gama: "/c // /0 # /w dh_uh /w /_k_w_i_k /w /_b_r_ah_uu_n /w /_f_o_k_s /w /_j_a_m_p_s /w /_uh_uu.v_uh_r /w dh_uh /w /_l_e_i.z_i /w /l /*d_o_g # // "
+gs:   [/c // /0 # /w dh_uh /w /_k_w_i_k /w /_b_r_ah_uu_n /w /_f_o_k_s /w /_j_a_m_p_s /w /_uh_uu.v_uh_r /w dh_uh /w /_l_e_i.z_i /w /l /*d_o_g # // /c ]
+-- In 1984, it cost $3.25.
+gama: "/c // /3 # /w i_n /w /l /_n_ah_i_n.t_ee_n /_e_i.t_ee /*f_aw_r # ^ // /0 # /w /_i_t /w /_k_o_s_t /w /l /_th_r_ee /_d_o.l_uh_r_z aa_n_d /_t_w_e_n.t_ee /_f_ah_i_v /*s_e_n_t_s # // "
+gs:   [/c // /3 # /w i_n /w /l /_n_ah_i_n.t_ee_n /_e_i.t_ee /*f_aw_r # ^ // /0 # /w /_i_t /w /_k_o_s_t /w /l /_th_r_ee /_d_o.l_uh_r_z aa_n_d /_t_w_e_n.t_ee /_f_ah_i_v /*s_e_n_t_s # // /c ]
+-- Call 555-1234 on 3/4/2025 at 10:30.
+gama: "/c // /0 # /w /_k_aw_l /w /_f_ah_i_v /_f_ah_i_v /_f_ah_i_v ^ /_w_a_n /_t_uu /_th_r_ee /_f_aw_r /w o_n /w /_th_r_ee /_s_l_aa_sh /_f_aw_r /_s_l_aa_sh /_t_uu /_z_i_r.uh_uu /_t_uu /_f_ah_i_v /w aa_t /w /l /_t_e_n /*th_uh_r.t_ee # // "
+gs:   [/c // /0 # /w /_k_aw_l /w /_f_ah_i_v /_f_ah_i_v /_f_ah_i_v ^ /_w_a_n /_t_uu /_th_r_ee /_f_aw_r /w o_n /w /_th_r_ee /_s_l_aa_sh /_f_aw_r /_s_l_aa_sh /_t_uu /_z_i_r.uh_uu /_t_uu /_f_ah_i_v /w aa_t /w /l /_t_e_n /*th_uh_r.t_ee # // /c ]
+-- It weighs 2.5 kg, 1st of 22nd, 45%.
+gama: "/c // /3 # /w /_i_t /w /_w_e_i_s /w /_t_uu /_p_o_i_n_t /_f_ah_i_v /w /l /_k_e_i /*j_ee # ^ // /3 # /w /_f_uh_r_s_t /w uh_v /w /l /_t_w_e_n.t_ee /*s_e.k_uh_n_d # ^ // /0 # /w /l /_f_aw_r.t_ee /_f_ah_i_v p_uh_r./*s_e_n_t # // "
+gs:   [/c // /3 # /w /_i_t /w /_w_e_i_s /w /_t_uu /_p_o_i_n_t /_f_ah_i_v /w /l /_k_e_i /*j_ee # ^ // /3 # /w /_f_uh_r_s_t /w uh_v /w /l /_t_w_e_n.t_ee /*s_e.k_uh_n_d # ^ // /0 # /w /l /_f_aw_r.t_ee /_f_ah_i_v p_uh_r./*s_e_n_t # // /c ]
+== 4. Parameter tracks, GnuspeechSA reference
+frames: reference 875, candidate 875
+  pitch    max |diff| 22.0000
+  glotVol  max |diff| 0.0005
+  aspVol   max |diff| 0.0004
+  fricVol  max |diff| 0.0005
+  fricPos  max |diff| 0.0005
+  fricCF   max |diff| 0.0050
+  fricBW   max |diff| 0.0050
+  r1       max |diff| 0.0000
+  r2       max |diff| 0.0005
+  r3       max |diff| 0.0051
+  r4       max |diff| 0.0005
+  r5       max |diff| 0.0005
+  r6       max |diff| 0.0005
+  r7       max |diff| 0.0005
+  r8       max |diff| 0.0101
+  velum    max |diff| 0.0005
+pitch range: reference -25.65..-7.00, candidate -36.00..-7.09
+r8: 29 frames beyond tolerance, frames 728..756
+== 5. The same parameter file through both tubes (44.1 kHz)
+reference gs_trm.wav: 44100 Hz, 154405 samples, rms 6535
+vtm0.wav: 154146 samples, lag -6, gain 0.898, correlation 0.91837, SNR 8.1 dB, identical 7.8 %
+       50-  300 Hz  coherence 0.837  level ref/cand -0.2 dB  energy share  54.8 %
+      300- 1000 Hz  coherence 0.726  level ref/cand -0.2 dB  energy share  24.3 %
+     1000- 2000 Hz  coherence 0.577  level ref/cand -0.2 dB  energy share   1.9 %
+     2000- 4000 Hz  coherence 0.140  level ref/cand -0.0 dB  energy share   0.7 %
+     4000- 6000 Hz  coherence 0.090  level ref/cand -0.1 dB  energy share   0.2 %
+     6000- 8000 Hz  coherence 0.070  level ref/cand -0.1 dB  energy share   0.0 %
+     8000-10000 Hz  coherence 0.071  level ref/cand +0.1 dB  energy share   0.0 %
+    10000-15000 Hz  coherence 0.009  level ref/cand +0.0 dB  energy share   0.0 %
+    50 ms stretches with signal: 61, median correlation 0.932
+      t = 0.27 s  correlation +0.899  rms 3885
+      t = 0.32 s  correlation -0.199  rms 170
+      t = 0.37 s  correlation -0.172  rms 428
+      t = 0.52 s  correlation +0.825  rms 1237
+      t = 1.07 s  correlation +0.015  rms 228
+      t = 1.12 s  correlation +0.101  rms 220
+      t = 1.32 s  correlation +0.050  rms 872
+      t = 1.37 s  correlation -0.015  rms 650
+      t = 1.42 s  correlation -0.127  rms 425
+      t = 1.82 s  correlation +0.164  rms 288
+      t = 1.87 s  correlation +0.039  rms 380
+      t = 1.92 s  correlation +0.751  rms 811
+      t = 2.67 s  correlation +0.898  rms 9757
+      t = 2.72 s  correlation +0.716  rms 7186
+      t = 2.77 s  correlation +0.534  rms 5855
+      t = 2.82 s  correlation +0.591  rms 7519
+      t = 2.87 s  correlation +0.601  rms 6224
+      t = 2.92 s  correlation +0.344  rms 1841
+      t = 2.97 s  correlation +0.462  rms 1788
+      t = 3.02 s  correlation +0.362  rms 5404
+      t = 3.07 s  correlation +0.371  rms 7484
+      t = 3.12 s  correlation +0.350  rms 5180
+      t = 3.17 s  correlation +0.134  rms 1393
+      t = 3.22 s  correlation -0.022  rms 817
+      t = 3.27 s  correlation +0.026  rms 194
+reference gs_trm.wav: 44100 Hz, 154405 samples, rms 6535
+vtm1.wav: 154146 samples, lag -7, gain 0.901, correlation 0.91841, SNR 8.1 dB, identical 7.8 %
+vtm2.wav: 154146 samples, lag -6, gain 0.898, correlation 0.91837, SNR 8.1 dB, identical 7.8 %
+vtm3.wav: 154115 samples, lag -37, gain 0.938, correlation 0.89983, SNR 7.2 dB, identical 7.8 %
+vtm4.wav: 154115 samples, lag -37, gain 0.935, correlation 0.88990, SNR 6.8 dB, identical 7.8 %
+-- against model 0
+reference vtm0.wav: 44100 Hz, 154146 samples, rms 6692
+vtm1.wav: 154146 samples, lag -1, gain 1.003, correlation 0.99942, SNR 29.3 dB, identical 14.2 %
+vtm2.wav: 154146 samples, lag +0, gain 1.000, correlation 1.00000, SNR inf dB, identical 100.0 %
+vtm3.wav: 154115 samples, lag -31, gain 1.038, correlation 0.97335, SNR 12.8 dB, identical 9.7 %
+vtm4.wav: 154115 samples, lag -31, gain 1.041, correlation 0.96832, SNR 12.1 dB, identical 9.5 %
+model 0 and model 2: byte-identical
+== 6. Internal sample rates
+0_male [VocalTractModel0] Internal sample rate: 20034
+0_female [VocalTractModel0] Internal sample rate: 23373
+2_male [VocalTractModel2] Internal sample rate: 20034
+3_male [VocalTractModel2] Internal sample rate: 60102
+4_male [VocalTractModel4] Internal sample rate: 60102
+5_male [VocalTractModel5] Internal sample rate: 60411.4
+5_female [VocalTractModel5] Internal sample rate: 70480
+== 7. Repeatability and builds (randomness off)
+0_male: repeat same, other build: params identical, wav identical
+4_male: repeat same, other build: params identical, wav identical
+5_male: repeat same, other build: params identical, wav identical
+== 8. Speed, about 100 s of speech, best of 3
+0_male: 101.3 s of audio in 856 ms, x118 real time
+2_male: 101.3 s of audio in 864 ms, x117 real time
+3_male: 101.3 s of audio in 1658 ms, x61 real time
+4_male: 101.3 s of audio in 1738 ms, x58 real time
+5_male: 101.7 s of audio in 1564 ms, x65 real time
+a run without audio output (load + parse only): 145 ms

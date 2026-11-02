@@ -1,0 +1,13 @@
+alphabet       32     64    100    128    200    256    300    400    500    600    800   1000
+lower          ok     ok     ok     ok     ok     ok     ok     ok     ok     ok     ok     ok
+vowelless      ok     ok     ok     ok   ASAN   ASAN   ASAN   ASAN   ASAN   ASAN   ASAN   ASAN
+vowels         ok     ok     ok     ok     ok     ok     ok     ok     ok     ok     ok     ok
+upper          ok     ok     ok     ok     ok     ok     ok     ok     ok     ok     ok     ok
+base64         ok     ok     ok     ok     ok     ok     ok     ok     ok     ok     ok   ASAN
+hex            ok     ok     ok     ok     ok     ok     ok   ASAN   ASAN   ASAN   ASAN   ASAN
+digits         ok     ok     ok     ok     ok   ASAN   ASAN   ASAN   ASAN   ASAN   ASAN   ASAN
+mixed          ok     ok     ok     ok     ok     ok     ok     ok     ok     ok     ok     ok
+ok = parsed; exc = a C++ exception (would be an error return in an API); ASAN = a memory error
+stack-buffer-overflow        `anonymous namespace'::spellIt gama_tts\src\text_parser\english\LetterToSound.cpp:222 first at 200 chars (vowelless); 8 cases
+access-violation             GS::TextParser::English::NumberParser::initialParse          first at 256 chars (digits); 2 cases
+heap-buffer-overflow         GS::TextParser::English::NumberParser::initialParse          first at 300 chars (digits); 11 cases
