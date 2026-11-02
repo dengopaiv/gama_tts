@@ -1,0 +1,18 @@
+  gama_api.vcxproj -> <path>\build-x64\Release\gama_api.dll
+  gama_api.vcxproj -> <path>\build-x64\Release\gama_api.dll
+tempo: 918 utterances, every one spoken; 10 needed a lower tempo than asked (rule 11)
+  (tempo took 24 s)
+tokens: 1185 utterances, no crash
+  (tokens took 532 s)
+text: 418 spoken, 32 with nothing to say, no crash
+  (text took 10 s)
+phonetic: 95 spoken, 55 refused, no crash
+  (phonetic took 0 s)
+params: 196 extremes spoken, 6 refused by a shared limit; slowest 1.88 s (voice 4: tempo = 0.1)
+  (params took 27 s)
+random: 100 settings spoken, 0 not
+  (random took 8 s)
+0 failures
+exit 0
+
+[exited with code 0]

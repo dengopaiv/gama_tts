@@ -1,5 +1,7 @@
 # 10. Building model 5: the API, the GUI and the add-on
 
+*To use them, see [chapter 11](11-using-it.md). For every step in order and every failed attempt, [chapter 12](12-record-of-2026-11-02.md).*
+
 Started 2026-11-02, when the author, having listened to the files of
 [chapter 9](09-addon-and-gui-feasibility.md), said: "Model 5 needs to be built, it's better in sound and
 clarity than the original gnuspeech." That settled decision 1 and decision 6 of that chapter: **model 5's five
@@ -11,6 +13,30 @@ GUI with NVDA either.
 
 **Where it is:** the branch `model5` of the public fork, by the author's decision of 2026-11-02. `master` stays level with upstream. The code is adapted from
 `GnuspeechSA-NVDA`, whose own repository stays private. No packaged add-on or built program is in the repository: `package.py` and the build below make them.
+
+## The decisions, and who made them
+
+| Date | Decision | By | Words, where they were recorded |
+|---|---|---|---|
+| 2026-11-02 | The fork stays public | The author | "I guess this stays public." The fork already existed, so there was nothing to create |
+| 2026-11-02 | Build model 5, and no other | The author, by ear, after the files of `build-listening/` | "Model 5 needs to be built, it's better in sound and clarity than the original gnuspeech." |
+| 2026-11-02 | Publish this work, though it comes from the private Gnuspeech add-on | The author | "I think we may push it." Taken to mean this work on this fork, and not that repository, which stayed private |
+| 2026-11-02 | `docs/` goes too | Claude, on that sentence, since the README and `NOTICE.md` point to it. **Said so to the author, who has not objected and can still reverse it.** | |
+| 2026-11-02 | A branch, not `master`, which stays level with upstream | Claude, following this collection's habit | |
+| 2026-11-02 | No built add-on or program in the repository | Claude: `package.py` makes them, and a release should wait for a test in NVDA | |
+| 2026-11-02 | Everything documented before anything further is done | The author | "First document everything." |
+
+Engineering choices, all open to change: a C API over the unchanged C++ engine (`docs/09`, section 6); a tube of the API's own; wxWidgets, as Gnuspeech's GUI; Steady throughout as the default, as Gnuspeech's add-on; the driver's rate curve unchanged. The levelling's constant was measured again. Trimming's were not.
+
+**Not done, on purpose:** testing inside NVDA, since that means restarting the screen reader the author is using; merging to `master`; sending anything upstream; and any change to Gnuspeech's code, whose problems are recorded in its `docs/09`, items 14 and 15.
+
+## What was pushed
+
+To `dengopaiv/gama_tts`, branch `model5`, three commits on upstream's `b108ad6`: `4dfc1c8` (the engine's fixes, `.gitattributes`), `302d8bd` (the API, GUI, add-on, tests, tools) and `28eef40` (`docs/`). A fourth commit followed the same day, on the author's "Commit and push.": everything in `docs/` since, the READMEs of `gui/`, `nvda-addon/`, `tests/` and `tools/`, the measurement scripts, and the corrections of comments in `api/` and `tests/`. Later changes are in `git log`, which is the truth.
+
+**Before the push,** per the head directory's rule: 66 files, none of them a binary, a ROM, audio or an archive (`git diff --name-only`, by extension, and by size). No local paths, and no email address of ours but the commits' own author line. Other private projects of ours are named, and not described: two passages that said too much about them were reworded first. **After it,** a fresh clone with `core.autocrlf=true` built and passed the C tests, the golden traces and the driver test.
+
+**Before the fourth commit,** the same scan over its 55 paths: no binary, ROM, audio or archive, no user name, no email address and no secret. It found one thing, F31 in chapter 12: logs described as having their paths replaced still held them. Those were cleaned first. The scripts in `measurements/gama5/port/` keep theirs, as their README says. Private projects are named as before: `IveHeardOfWildebeest`, which `NOTICE.md` already named, and Tawkative.
 
 ## What is here
 
@@ -24,8 +50,8 @@ GUI with NVDA either.
 | `tests/nvda/test_driver.py` | The driver, with stand-ins for NVDA |
 | `tests/gui/gui_check.py` | The GUI from outside, through MSAA, on a private desktop |
 | `tests/golden/` | The corpus, and the frozen output of the unchanged engine |
-| `tools/golden/make_golden.py` | Makes them |
-| `tools/measure/` | `levels.py`, `pitch_balance.py`, `end_tick.py`, `edges.py`, `tail.py` |
+| `tools/` | The scripts that make and measure things: [tools/README.md](../tools/README.md) |
+| `docs/measurements/gama5/` | The results behind this chapter, and the scripts that derived the code: [README](measurements/gama5/README.md) |
 | `CMakeLists.txt` | The root build. Upstream's own builds are not touched by it |
 | `.gitattributes` | Keeps `data/` byte for byte, since the engine refuses CRLF |
 | `NOTICE.md` | Who made what |
@@ -53,6 +79,10 @@ python -I nvda-addon/package.py
 
 **A checkout made before `.gitattributes` existed has CRLF in `data/`.** After adding it: `rm -rf data; git checkout -- data`.
 That was done here, with `git diff --quiet -- data` first, to be sure nothing was lost.
+
+## 0. The listening test that started this
+
+`docs/measurements/feasibility/make_kit.py` made 20 files, in `build-listening/`, which git ignores: the same sentences through each voice and through the Gnuspeech add-on's engine, model 5 male at rising tempos, and 30 short screen-reader items. `build-listening/README.txt` is the guide. All were made with the patched engine, varied intonation, and the engine's own peak levelling. The author listened and chose. That is the only judgement by ear so far, and it was of the voice in those files: not of steady loudness, trimming or the rates.
 
 ## 1. The order, and why
 
@@ -129,9 +159,11 @@ number of characters. From `NumberPronunciations.h`, per character:
 | `(` | 38 |
 | `w` | 17 ("'d_a.b_uh_l.y_uu ") |
 
-So 24 `<` or about 60 `w` overrun it. Random tokens averaged too few bytes per letter to show this before 200 characters.
+The table predicts about 60 `w`, and **tested on the unchanged parser, 61 `w` is parsed and 62 kills the process** ([spelling-limit](measurements/gama5/spelling-limit-2026-11-02.txt)). Random tokens averaged too few bytes per letter to show this before 200 characters.
 
-**The guard now counts by spelling,** with the engine's own table (`api/gama_spell.cpp`): a run is broken before its spelled length would pass 1,000 bytes, and in any case after 100 characters, where the other buffers were found to hold. So 23 `<`, or 58 `w`,
+**The table's symbols do not behave that way.** This chapter first said that 24 `<` would overrun it, which was calculated and not seen. Tested, `<` parsed at every length up to 1,000, and so did `b<` and `b(` repeated up to 100 characters: symbols do not reach that buffer in those forms. So the guard is stricter on symbols than the tests show it needs to be. That costs little, and was left so, since a symbol that does reach it has not been ruled out.
+
+**The guard now counts by spelling,** with the engine's own table (`api/gama_spell.cpp`): a run is broken before its spelled length would pass 1,000 bytes, and in any case after 100 characters, where the other buffers were found to hold. So 58 `w`, or 23 of a costly symbol,
 or 100 of anything cheap. **It leaves alone anything shorter,** and that matters: a first version charged every symbol the worst cost, and broke `http://www.gnu.org/software/gnuspeech/`, a line of the corpus, which changed how it was read. The golden test caught that at the package build.
 
 **ASan found one thing more.** `light()` in `ApplyStress.cpp` begins `while (!isvowel(*sb)) sb++;`, with no check for the end of the string. A syllable with no vowel sends it through the rest of the
@@ -198,7 +230,7 @@ The levelling itself, `check_leveling.py`, all 182 lines of all five voices at -
 | female | -22.03 to -22.00 | 2.50 → 0.18 | 0 |
 | large child | -22.00 | 1.84 → 0.17 | 0 |
 | small child | -22.00 | 1.72 → 0.14 | 0 |
-| baby | -22.00 to -21.95 | 1.24 → 0.12 | 0 |
+| baby | -22.00 to -21.95 | 1.25 → 0.12 | 0 |
 
 The gate at glottal volume 57 dB stands, since model 5's vowels have the same target of 60.
 
@@ -245,7 +277,7 @@ volume 0, and **its Speak step played through the speakers at full volume, on th
 | `gui_check.py` | 109 checks, 0 failed: [measurements/gama5/gui-check-2026-11-02.txt](measurements/gama5/gui-check-2026-11-02.txt) |
 | `gama_gui --smoke` | 63,865 samples at 48000 Hz |
 
-`check_robustness.py`, stage by stage, on the final code, in Release and under AddressSanitizer alike. `ctest` runs this. `--long` makes the token and text stages longer, and was last run before the guard took its final form:
+**The record:** [measurements/gama5/results-2026-11-02.txt](measurements/gama5/results-2026-11-02.txt) holds every test and measurement of this chapter but the GUI's check and the ASan run, from one run on the final code. `check_robustness.py`, stage by stage, in its routine length, in Release and under AddressSanitizer alike. `ctest` runs this. Its `--long` figures are in the record:
 
 | Stage | What | Result |
 |---|---|---|
@@ -256,7 +288,9 @@ volume 0, and **its Speak step played through the speakers at full volume, on th
 | params | Each parameter at each end, male and baby | 196 spoken, 6 refused by a shared limit |
 | random | Random settings of all parameters | 100 spoken |
 
-The slowest extreme was the baby voice at tempo 0.1: 1.92 s for one sentence, in Release. That is the extremes run `docs/09` asked for, and it found no instability, at those voices. Whether each extreme *sounds* right was not judged.
+With `--long`, in the record: 1,608 tokens; 4,275 texts spoken and 225 with nothing to say; 975 phonetic strings spoken and 525 refused; 1,000 random settings. No crash, 0 failures. Not under ASan, which would take hours at that length, and ASan's own run is the routine one. The tempo and parameter stages are the same at either length.
+
+The slowest extreme was the baby voice at tempo 0.1: 1.8 to 1.9 s for one sentence, in Release. That is the extremes run `docs/09` asked for, and it found no instability, at those voices. Whether each extreme *sounds* right was not judged.
 
 **Under AddressSanitizer:** `api_test.c` passes, and so does the whole robustness suite, 0 failures: [measurements/gama5/robustness-asan-2026-11-02.txt](measurements/gama5/robustness-asan-2026-11-02.txt). It runs in Python, so the ASan runtime `clang_rt.asan_dynamic-x86_64.dll` must be copied beside `gama_api.dll`, since Python no longer looks on `PATH` for a DLL's dependencies. ASan found one thing the Release runs could not, `light()`, and nothing since.
 

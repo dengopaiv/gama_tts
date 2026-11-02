@@ -1,0 +1,278 @@
+### commit: 28eef40; changed files: 5
+
+### 1. C tests of the API
+info: "Hello world." trimmed 10/30 ms: 63865 -> 51871 samples (250 ms saved)
+info: phonetic string of "Hello world.": /c // /0 # /w h_e./_l_uh_uu /w /l /*w_er_r_ll_d # // /c 
+135 checks, 0 failed
+(exit 0)
+
+### 2. Against the golden traces of the unchanged engine
+1472 golden rows (samples and track), 182 also through the phonetic string, 0 differences
+(exit 0)
+
+### 3. Robustness, with --long
+tempo: 918 utterances, every one spoken; 10 needed a lower tempo than asked (rule 11)
+  (tempo took 17 s)
+tokens: 1608 utterances, no crash
+  (tokens took 281 s)
+text: 4275 spoken, 225 with nothing to say, no crash
+  (text took 100 s)
+phonetic: 975 spoken, 525 refused, no crash
+  (phonetic took 1 s)
+params: 196 extremes spoken, 6 refused by a shared limit; slowest 1.79 s (voice 4: tempo = 0.1)
+  (params took 26 s)
+random: 1000 settings spoken, 0 not
+  (random took 75 s)
+0 failures
+(exit 0)
+
+### 4. Levelling against an independent measure, all five voices
+voice 0, peak mode: voiced frames inside an utterance move 3.13 dB (sd) on average, at most 5.97
+voice 0, loudness mode, 182 lines at -22.0 dB: measured -22.14 to -22.00 dB (sd 0.019); 4 limited, at most 0.14 dB below; voiced frames inside move 3.13 dB (sd) on average, at most 5.97
+voice 0, constant mode, 182 lines at -22.0 dB: measured -22.21 to -22.00 dB (sd 0.016); 1 limited, at most 0.21 dB below; voiced frames inside move 0.33 dB (sd) on average, at most 0.47
+voice 1, peak mode: voiced frames inside an utterance move 2.50 dB (sd) on average, at most 5.02
+voice 1, loudness mode, 182 lines at -22.0 dB: measured -22.00 to -22.00 dB (sd 0.000); 0 limited, at most 0.00 dB below; voiced frames inside move 2.50 dB (sd) on average, at most 5.02
+voice 1, constant mode, 182 lines at -22.0 dB: measured -22.03 to -22.00 dB (sd 0.003); 0 limited, at most 0.00 dB below; voiced frames inside move 0.18 dB (sd) on average, at most 0.34
+voice 2, peak mode: voiced frames inside an utterance move 1.84 dB (sd) on average, at most 4.15
+voice 2, loudness mode, 182 lines at -22.0 dB: measured -22.00 to -22.00 dB (sd 0.000); 0 limited, at most 0.00 dB below; voiced frames inside move 1.84 dB (sd) on average, at most 4.15
+voice 2, constant mode, 182 lines at -22.0 dB: measured -22.00 to -22.00 dB (sd 0.000); 0 limited, at most 0.00 dB below; voiced frames inside move 0.17 dB (sd) on average, at most 0.31
+voice 3, peak mode: voiced frames inside an utterance move 1.72 dB (sd) on average, at most 3.09
+voice 3, loudness mode, 182 lines at -22.0 dB: measured -22.00 to -22.00 dB (sd 0.000); 0 limited, at most 0.00 dB below; voiced frames inside move 1.72 dB (sd) on average, at most 3.09
+voice 3, constant mode, 182 lines at -22.0 dB: measured -22.00 to -22.00 dB (sd 0.000); 0 limited, at most 0.00 dB below; voiced frames inside move 0.14 dB (sd) on average, at most 0.21
+voice 4, peak mode: voiced frames inside an utterance move 1.25 dB (sd) on average, at most 2.34
+voice 4, loudness mode, 182 lines at -22.0 dB: measured -22.00 to -22.00 dB (sd 0.000); 0 limited, at most 0.00 dB below; voiced frames inside move 1.25 dB (sd) on average, at most 2.34
+voice 4, constant mode, 182 lines at -22.0 dB: measured -22.00 to -21.95 dB (sd 0.003); 0 limited, at most 0.00 dB below; voiced frames inside move 0.12 dB (sd) on average, at most 0.19
+peak mode: noise against voice moves +8.92 dB an octave down, -10.40 dB an octave up
+loudness mode: noise against voice moves -0.46 dB an octave down, -0.94 dB an octave up
+constant mode: noise against voice moves -1.14 dB an octave down, -0.55 dB an octave up
+0 failures
+(exit 0)
+
+### 5. Noise against voice across pitch, 20 lines
+
+male, peak: 20 lines
+semitones   N-V dB   change  dB/semi    A dB
+      -12    -3.17    +8.92    -0.74  -22.77
+       -6    -7.55    +4.53    -0.76  -21.91
+        0   -12.09    +0.00    +0.00  -20.83
+        6   -17.24    -5.15    -0.86  -18.56
+       12   -22.49   -10.40    -0.87  -17.91
+
+male, even per message: 20 lines
+semitones   N-V dB   change  dB/semi    A dB
+      -12   -12.54    -0.46    +0.04  -22.11
+       -6   -12.27    -0.19    +0.03  -22.00
+        0   -12.08    +0.00    +0.00  -22.00
+        6   -12.49    -0.41    -0.07  -22.00
+       12   -13.02    -0.94    -0.08  -22.00
+
+male, steady throughout: 20 lines
+semitones   N-V dB   change  dB/semi    A dB
+      -12   -13.46    -1.14    +0.09  -22.00
+       -6   -12.50    -0.18    +0.03  -22.00
+        0   -12.32    +0.00    +0.00  -22.00
+        6   -12.78    -0.45    -0.08  -22.00
+       12   -12.88    -0.55    -0.05  -22.00
+
+female, peak: 20 lines
+semitones   N-V dB   change  dB/semi    A dB
+      -12   -13.46    +8.95    -0.75  -19.99
+       -6   -17.98    +4.44    -0.74  -18.67
+        0   -22.41    +0.00    +0.00  -17.29
+        6   -27.10    -4.68    -0.78  -16.03
+       12   -31.66    -9.24    -0.77  -15.30
+
+female, even per message: 20 lines
+semitones   N-V dB   change  dB/semi    A dB
+      -12   -22.74    -0.33    +0.03  -22.00
+       -6   -22.65    -0.24    +0.04  -22.00
+        0   -22.41    +0.00    +0.00  -22.00
+        6   -22.63    -0.22    -0.04  -22.00
+       12   -23.46    -1.05    -0.09  -22.00
+
+female, steady throughout: 20 lines
+semitones   N-V dB   change  dB/semi    A dB
+      -12   -22.57    -0.26    +0.02  -22.00
+       -6   -22.73    -0.42    +0.07  -22.00
+        0   -22.31    +0.00    +0.00  -22.00
+        6   -22.76    -0.45    -0.08  -22.00
+       12   -22.06    +0.25    +0.02  -22.00
+(exit 0)
+
+### 6. The tick at the end of an utterance
+male         182 lines; 41 end with a sample above -60 dBFS; largest in the last 5 ms bins, newest first: [599, 33, 29, 20, 26, 30]
+             medians: [0, 0, 0, 0, 0, 0]; worst: [(599, 'U.S.A.'), (561, 'No.'), (467, 'Knowledge; done, but gon'), (438, 'Large, but target, gin, ')]
+female       182 lines; 41 end with a sample above -60 dBFS; largest in the last 5 ms bins, newest first: [382, 24, 23, 24, 17, 26]
+             medians: [0, 0, 0, 0, 0, 0]; worst: [(382, 'No.'), (350, '(Mind the latter, how it'), (349, 'Compare alien with Itali'), (316, 'Kitchen, lichen; laundry')]
+large_child  182 lines; 42 end with a sample above -60 dBFS; largest in the last 5 ms bins, newest first: [281, 17, 18, 19, 19, 20]
+             medians: [0, 0, 0, 0, 0, 0]; worst: [(281, 'Real, zeal; mauve, gauze'), (279, 'e-mail'), (259, 'Between mover, plover, D'), (244, 'Ivy, privy; famous; clam')]
+small_child  182 lines; 41 end with a sample above -60 dBFS; largest in the last 5 ms bins, newest first: [238, 30, 28, 27, 28, 28]
+             medians: [0, 0, 0, 0, 0, 0]; worst: [(238, 'Senator, spectator, mayo'), (226, '7'), (211, 'Sword and sward, retain '), (208, 'Between mover, plover, D')]
+baby         182 lines; 36 end with a sample above -60 dBFS; largest in the last 5 ms bins, newest first: [257, 36, 35, 35, 43, 38]
+             medians: [0, 0, 0, 0, 0, 0]; worst: [(257, 'Tortoise, turquoise, cha'), (222, 'Dies and diet, Lord and '), (211, 'Senator, spectator, mayo'), (210, '3.14')]
+(exit 0)
+
+### 7. The ends of a few utterances
+text                                   n  first    last tail ms pk last 20ms pk 200ms before  last 8 samples
+8                                  34061   5798   24577   197.6            0             585  [np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0)]
+Button,                            39253   6447   39240     0.2           47           13999  [np.int32(-1), np.int32(1), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0)]
+Hello world.                       63865   4845   54795   188.9            0             706  [np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0)]
+Hello world. Goodbye world.       129433   4845  129420     0.2           71             633  [np.int32(1), np.int32(-1), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0)]
+File                               44444   5788   34936   198.1            0            2222  [np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0)]
+Edit                               35407   5795   27071   173.6            0             478  [np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0)]
+OK                                 43868   5230   34182   201.8            0             940  [np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0)]
+yes                                37907   6516   27900   208.5            0             177  [np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0)]
+no                                 38099   5425   38088     0.2          561             461  [np.int32(-7), np.int32(2), np.int32(1), np.int32(-2), np.int32(2), np.int32(-1), np.int32(1), np.int32(0)]
+check box, checked                 93284  10597   84971   173.2            0             412  [np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0)]
+The quick brown fox jumps over t  168273   6172  158791   197.5            0             321  [np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0), np.int32(0)]
+(exit 0)
+
+'no': 38099 samples = 793.7 ms; track 198 lines = 792 ms; peak 31129
+ms from end: peak in each 5 ms, newest last
+    23   21   13   15   16    9   30   17    2    1    0    0    0    0    0    0    0    0    0    0    0    0    0    3    7   12    4    6   12    4    6   12    4    6   12    5    6   12    6  561
+track's last lines: pitch glotVol aspVol fricVol fricPos fricCF fricBW r1 r2 r3 r4 r5 r6 r7 r8 velum
+   -24.00   -0.00    0.00    0.00    5.50 2500.00  500.00    0.80    0.89    0.99    0.81    0.76    1.05    1.23    0.01    0.10
+   -24.00    0.00    0.00    0.00    5.50 2500.00  500.00    0.80    0.89    0.99    0.81    0.76    1.05    1.23    0.01    0.10
+   -24.00    0.00    0.00    0.00    5.50 2500.00  500.00    0.80    0.89    0.99    0.81    0.76    1.05    1.23    0.01    0.10
+   -24.00    0.00    0.00    0.00    5.50 2500.00  500.00    0.80    0.89    0.99    0.81    0.76    1.05    1.23    0.01    0.10
+   -24.00    0.00    0.00    0.00    5.50 2500.00  500.00    0.80    0.89    0.99    0.81    0.76    1.05    1.23    0.01    0.10
+   -24.00    0.00    0.00    0.00    5.50 2500.00  500.00    0.80    0.89    0.99    0.81    0.76    1.05    1.23    0.01    0.10
+
+'Button,': 39253 samples = 817.8 ms; track 204 lines = 816 ms; peak 31129
+ms from end: peak in each 5 ms, newest last
+  2847 1178  432  160   74   39   30   21   13    3    1    0    0    0    0    0    0    0    0    0    0    0    0   12    8   11    9   12    9   12    9   12    9   12   10   12   12   12   12   47
+track's last lines: pitch glotVol aspVol fricVol fricPos fricCF fricBW r1 r2 r3 r4 r5 r6 r7 r8 velum
+   -16.00   -0.00   -0.00    0.00    5.50 2500.00  500.00    0.80    0.89    0.99    0.81    0.76    1.05    1.23    0.01    0.10
+   -16.00    0.00   -0.00    0.00    5.50 2500.00  500.00    0.80    0.89    0.99    0.81    0.76    1.05    1.23    0.01    0.10
+   -16.00    0.00   -0.00    0.00    5.50 2500.00  500.00    0.80    0.89    0.99    0.81    0.76    1.05    1.23    0.01    0.10
+   -16.00    0.00   -0.00    0.00    5.50 2500.00  500.00    0.80    0.89    0.99    0.81    0.76    1.05    1.23    0.01    0.10
+   -16.00    0.00   -0.00    0.00    5.50 2500.00  500.00    0.80    0.89    0.99    0.81    0.76    1.05    1.23    0.01    0.10
+   -16.00    0.00   -0.00    0.00    5.50 2500.00  500.00    0.80    0.89    0.99    0.81    0.76    1.05    1.23    0.01    0.10
+
+'yes': 37907 samples = 789.7 ms; track 197 lines = 788 ms; peak 31129
+ms from end: peak in each 5 ms, newest last
+     2    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+track's last lines: pitch glotVol aspVol fricVol fricPos fricCF fricBW r1 r2 r3 r4 r5 r6 r7 r8 velum
+   -24.00    0.00    0.00   -0.00    5.50 2500.00  500.00    0.80    0.89    0.99    0.81    0.76    1.05    1.23    0.01    0.10
+   -24.00    0.00    0.00    0.00    5.50 2500.00  500.00    0.80    0.89    0.99    0.81    0.76    1.05    1.23    0.01    0.10
+   -24.00    0.00    0.00    0.00    5.50 2500.00  500.00    0.80    0.89    0.99    0.81    0.76    1.05    1.23    0.01    0.10
+   -24.00    0.00    0.00    0.00    5.50 2500.00  500.00    0.80    0.89    0.99    0.81    0.76    1.05    1.23    0.01    0.10
+   -24.00    0.00    0.00    0.00    5.50 2500.00  500.00    0.80    0.89    0.99    0.81    0.76    1.05    1.23    0.01    0.10
+   -24.00    0.00    0.00    0.00    5.50 2500.00  500.00    0.80    0.89    0.99    0.81    0.76    1.05    1.23    0.01    0.10
+(exit 0)
+
+### 8. Spelled lengths, from the engine's source
+96 entries, in bytes when spelled; a run of one character overflows 1027 bytes at the count shown
+ bytes  overflows at  char  name
+    43            24  '<'   OPEN_ANGLE_BRACKET
+    42            25  '>'   CLOSE_ANGLE_BRACKET
+    40            26  '['   OPEN_SQUARE_BRACKET
+    40            26  '!'   EXCLAMATION_POINT
+    39            27  ']'   CLOSE_SQUARE_BRACKET
+    38            28  '('   OPEN_PARENTHESIS
+    37            28  ')'   CLOSE_PARENTHESIS
+    28            37  "'"   SINGLE_QUOTE
+    27            39  '?'   QUESTION_MARK
+    26            40  '|'   VERTICAL_BAR
+    26            40  ';'   SEMICOLON
+    26            40  '%'   PERCENT_SIGN
+    25            42  '{'   OPEN_BRACE
+    25            42  '`'   GRAVE_ACCENT
+    25            42  '"'   DOUBLE_QUOTE
+    24            43  '}'   CLOSE_BRACE
+    24            43  '#'   NUMBER_SIGN
+    23            45  '='   EQUAL_SIGN
+    22            47  '_'   UNDERSCORE
+    22            47  '&'   AMPERSAND
+    22            47  '$'   DOLLAR_SIGN
+    19            55  '+'   PLUS_SIGN
+    19            55  '*'   ASTERISK
+    18            58  '\\'  BACKSLASH
+    17            61  'w'   W
+    17            61  'W'   W
+    16            65  '\x7f' UNKNOWN
+    16            65  '@'   AT_SIGN
+    16            65  ':'   COLON
+    15            69  '.'   PERIOD
+    15            69  '-'   HYPHEN
+    13            80  '0'   ZERO
+    12            86  '~'   TILDE
+    12            86  '^'   CARET
+    12            86  '7'   SEVEN
+    12            86  ' '   BLANK
+    11            94  '/'   SLASH
+    10           103  '9'   NINE
+    10           103  '5'   FIVE
+    10           103  ','   COMMA
+     9           115  '6'   SIX
+     9           115  '3'   THREE
+     8           129  'y'   Y
+     8           129  'q'   Q
+     8           129  'h'   H
+     8           129  'Y'   Y
+     8           129  'Q'   Q
+     8           129  'H'   H
+     8           129  '4'   FOUR
+     7           147  'x'   X
+     7           147  'o'   O
+     7           147  'k'   K
+     7           147  'j'   J
+     7           147  'X'   X
+     7           147  'O'   O
+     7           147  'K'   K
+     7           147  'J'   J
+     7           147  '8'   EIGHT
+     7           147  '1'   ONE
+     6           172  'z'   Z
+     6           172  'v'   V
+     6           172  'u'   U
+     6           172  't'   T
+     6           172  'r'   R
+     6           172  'p'   P
+     6           172  'i'   I
+     6           172  'g'   G
+     6           172  'd'   D
+     6           172  'c'   C
+     6           172  'b'   B
+     6           172  'Z'   Z
+     6           172  'V'   V
+     6           172  'U'   U
+     6           172  'T'   T
+     6           172  'R'   R
+     6           172  'P'   P
+     6           172  'I'   I
+     6           172  'G'   G
+     6           172  'D'   D
+     6           172  'C'   C
+     6           172  'B'   B
+     6           172  '2'   TWO
+     5           206  's'   S
+     5           206  'n'   N
+     5           206  'm'   M
+     5           206  'l'   L
+     5           206  'f'   F
+     5           206  'a'   A
+     5           206  'S'   S
+     5           206  'N'   N
+     5           206  'M'   M
+     5           206  'L'   L
+     5           206  'F'   F
+     5           206  'A'   A
+     4           257  'e'   E
+     4           257  'E'   E
+(exit 0)
+
+### 9. The driver, with stand-ins for NVDA
+log: GamaTTS: API 1, voices male, female, large_child, small_child, baby, 48000 Hz
+info: trimmed '8': 34061 -> 20700 samples (278 ms saved)
+info: trimmed 'Button,': 39253 -> 29730 samples (198 ms saved)
+info: trimmed 'Hello world.': 63865 -> 57631 samples (130 ms saved)
+info: trimmed 'Hello world. Goodbye world.': 129460 -> 122949 samples (136 ms saved)
+info: first sound of a 30-sentence paragraph after 60 ms
+info: 0.04 s from cancelling a huge token to the end of the next word
+log: GamaTTS: API 1, voices male, female, large_child, small_child, baby, 48000 Hz
+info: non-ANSI data path opened through its short path
+all passed
+(exit 0)
+
+### done

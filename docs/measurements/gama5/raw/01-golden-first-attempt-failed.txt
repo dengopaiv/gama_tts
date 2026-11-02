@@ -1,0 +1,44 @@
+# Golden-trace corpus for GnuspeechSA, one utterance per line.
+# Lines starting with '#' and blank lines are skipped. ASCII only: the
+# engine's text parser is ASCII, and the command line passes text through
+# the Windows ANSI code page.
+#
+# Section 1: what NVDA sends most often (single letters, numbers, control
+# names, punctuation, paths). Section 2: "The Chaos" by Gerard Nolst
+# Trenite (Charivarius, 1870-1946), public domain, as used for upstream's
+pristine
+ls: cannot access '<path> No such file or directory
+Traceback (most recent call last):
+  File "<path>\tools\golden\make_golden.py", line 155, in <module>
+    main()
+    ~~~~^^
+  File "<path>\tools\golden\make_golden.py", line 136, in main
+    first = run_once(exe, data, work, lines)
+  File "<path>\tools\golden\make_golden.py", line 110, in run_once
+    r = subprocess.run([exe, "tts", "-i", txt, "-p", vtm, voice_dir, wav], capture_output=True)
+  File "<path>", line 555, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "<path>", line 1040, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<path>", line 1555, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+[exited with code 1]

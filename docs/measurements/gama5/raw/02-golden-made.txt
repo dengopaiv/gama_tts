@@ -1,0 +1,20 @@
+  gama_tts.vcxproj -> <path>
+  5_male at tempo 1.0: done
+  5_female at tempo 1.0: done
+  5_large_child at tempo 1.0: done
+  5_small_child at tempo 1.0: done
+  5_baby at tempo 1.0: done
+  5_male at tempo 2.0: done
+  5_male at tempo 3.0: done
+  5_male at tempo 3.5: done
+  5_male at tempo 1.0: done
+  5_female at tempo 1.0: done
+  5_large_child at tempo 1.0: done
+  5_small_child at tempo 1.0: done
+  5_baby at tempo 1.0: done
+  5_male at tempo 2.0: done
+  5_male at tempo 3.0: done
+  5_male at tempo 3.5: done
+1472 utterances, 16 produced no audio, two runs identical -> <path>\tests\golden\msvc-x64.tsv
+
+[exited with code 0]

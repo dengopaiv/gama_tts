@@ -9,7 +9,7 @@ Gnuspeech GUI, and find out whether GamaTTS is functional enough to be turned in
 NVDA add-on and a GUI like Gnuspeech's. "Gnuspeech" in this chapter means the folder
 `../GnuspeechSA-NVDA`: its C API, add-on 1.2.0 and GUI.
 
-Nothing in the engine or in that folder's code was changed. Fixes were tried on scratch
+Nothing in the engine or in that folder's code was changed when this was written. Fixes were tried on scratch
 copies. Every number here comes from
 [`measurements/feasibility/`](measurements/feasibility/README.md), which also says how to
 run it again. **Known** means measured or read in the source, **inferred** means reasoned
@@ -186,6 +186,8 @@ The first kind is the worse one. It is the C runtime's fail-fast, **which cannot
 process ends at once. An access violation, by contrast, is turned into an `OSError` by Python's `ctypes`.
 
 ### The shipped Gnuspeech add-on has it too
+
+*Corrected 2026-11-02: the DLL measured below, `GnuspeechSA-NVDA/build/Release/gnuspeech_api.dll`, turned out to be an older build than add-on 1.2.0, so "shipped" was not yet shown. The same test on the DLL taken from `dist/gnuspeech-1.2.0.nvda-addon` confirms it: 100 `w` and 200 random consonants kill the process, and 1,000 `a`, 256 digits and 1,000 hex characters give access violations. [The run](measurements/gama5/shipped-gnuspeech-2026-11-02.txt). The tempo sweep's finding was also from the older DLL. On the package's DLL, "OK" and "a" speak at tempos 3.9 to 10.*
 
 The same code is in `GnuspeechSA-NVDA/src/en/letter_to_sound/`. Three random tokens at each
 length through its DLL, unchanged, in a child Python process:

@@ -1,0 +1,16 @@
+package exit 1
+1/5 Test #1: api ..............................   Passed    5.52 sec
+2/5 Test #2: golden ...........................***Failed  143.48 sec
+3/5 Test #3: robustness .......................   Passed  165.76 sec
+4/5 Test #4: leveling .........................   Passed  350.75 sec
+5/5 Test #5: driver ...........................   Passed   34.02 sec
+80% tests passed, 1 tests failed out of 5
++ ctest --test-dir "<path>\build-addon-x64" -C Release --output-on-failure
+    run(["ctest", "--test-dir", BUILD, "-C", "Release", "--output-on-failure"])
+subprocess.CalledProcessError: Command '['ctest', '--test-dir', '<path>\\build-addon-x64', 
+kaine 197609 1104354 Nov  2 19:31 nvda-addon/gamatts-0.1.0.nvda-addon
+47 files
+['manifest.ini', 'synthDrivers/gamatts.py', 'synthDrivers/gama_api.dll', 'NOTICE.md', 'COPYING.txt', 'DATA-LICENCE.txt', 'LICENSE-rapidxml.txt']
+18 from 0_male; artic.xml of model 0 present: False
+
+[exited with code 0]

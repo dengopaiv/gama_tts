@@ -1,5 +1,7 @@
 # 5. Editor, tools and accessibility
 
+*This chapter is about upstream's own editor. This fork's accessible GUI, which does a different job, is in [chapter 11](11-using-it.md).*
+
 ## GamaTTS:Editor against Monet and TRAcT
 
 `gama_tts_editor/README.md` calls it "an approximate clone of Monet". It is a

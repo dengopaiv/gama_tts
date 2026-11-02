@@ -271,7 +271,8 @@ size_t copyOut(const std::string& s, char* out, size_t outSize)
 // Rule 9. The engine's parser copies words into fixed buffers with no length check, and
 // indexes tables with signed characters. A word it cannot pronounce it spells, into a
 // buffer of 1027 bytes (LetterToSound.cpp), so what fills that buffer is the spelled length: 17
-// bytes for a "w", 43 for a "<". A run is broken before its spelling could fill it, and
+// bytes for a "w", which overflows from 62 of them. Symbols cost what the table says too, which
+// is stricter than needed, since none was seen to reach that buffer (docs/10). A run is broken before its spelling could fill it, and
 // before it reaches the length at which the other buffers were found to overflow (docs/10,
 // section 5). A run with no reason to be broken is left alone, since a broken word is read
 // differently: "http://www.gnu.org/software/gnuspeech/" must stay whole.

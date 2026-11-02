@@ -193,7 +193,8 @@ from `intonation_rhythm/intonation.txt` and the five
 so on. With `random_intonation = 1`, the slopes and perturbations get random
 components, so no two renderings are the same. With `smooth_intonation = 1`,
 a cubic curve passes through the points. Before the first point, pitch runs
-in a straight line from `initial_pitch` (−20 semitones by default).
+in a straight line from `initial_pitch` (−20 semitones by default). *(Upstream's code goes wrong
+here at tempo 3.9 and above, which [chapter 9](09-addon-and-gui-feasibility.md), section 2, explains. This fork has the fix.)*
 Semitone 0 is middle C: `frequency = 220 · 2^((pitch + 3)/12)` Hz
 (`vtm/VTMUtil.h`).
 
@@ -300,6 +301,9 @@ by default) with a Kaiser-windowed sinc interpolator (13 zero crossings,
 `Controller::writeOutputToFile` (`Controller.cpp:320`) scales the whole
 utterance to a fixed peak (`calculateOutputScale`) and writes a mono 16-bit
 WAV (`WAVEFileWriter.cpp`).
+
+*(Found since: about one utterance in five ends with a tick in its last 5 ms, from this converter's padding. See
+[chapter 10](10-model5-api-gui-addon.md), section 6.)*
 
 So every file is normalised to the same peak. Loudness does not depend on
 the text, but a quiet sentence and a loud one come out equally loud.

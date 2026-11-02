@@ -1,8 +1,10 @@
-# GamaTTS: study documents
+# GamaTTS: notes and record
 
-These are notes about **GamaTTS**. Chapters 1 to 9 are a study, and chapter 10 is the record of what was then built in this fork. The first eight are study notes about **GamaTTS**, Marcelo Y. Matuda's experimental
+**To use the add-on or the GUI, start at [chapter 11](11-using-it.md).** To see how they were made and checked, [chapter 10](10-model5-api-gui-addon.md).
+
+Chapters 1 to 9 are a study of **GamaTTS**, Marcelo Y. Matuda's experimental
 articulatory text-to-speech system. They cover how it makes sound, what it is
-written in, and how it differs from the Gnuspeech it grew out of. They were
+written in, and how it differs from the Gnuspeech it grew out of. Chapters 1 to 8 were
 written on 2026-10-16 from reading the source and from measurements on Windows
 11 x64. They are not upstream's documentation: that is in `../doc/` (the
 GamaTTS website source) and `../gama_tts/doc/`.
@@ -27,9 +29,11 @@ synthesizers."
 | A | [Measurements](07-measurements.md) | Every number in these documents, and how it was obtained |
 | 8 | [Open items](08-open-items.md) | What is still unknown or untested |
 | 9 | [Can it become an add-on and a GUI?](09-addon-and-gui-feasibility.md) | The study of 2026-11-02: what works, the defects and their fixes, the C API and GUI plan |
-| 10 | [Building model 5](10-model5-api-gui-addon.md) | What was built after the author chose model 5 by ear: the API, the GUI, the add-on, and how each was checked |
+| 10 | [Building model 5](10-model5-api-gui-addon.md) | What was built after the author chose model 5 by ear: the API, the GUI, the add-on, how each was checked, and what is still open |
+| 11 | [Using it](11-using-it.md) | The manual: the add-on's settings, the GUI's keys, all 49 parameters, the C API |
+| 12 | [The record of 2026-11-02](12-record-of-2026-11-02.md) | Every step in order, every failed attempt, every decision and whose it was |
 
-The scripts behind the measurements are in [`measurements/`](measurements/), and those of chapter 9 in [`measurements/feasibility/`](measurements/feasibility/README.md).
+The scripts behind the measurements are in [`measurements/`](measurements/), those of chapter 9 in [`measurements/feasibility/`](measurements/feasibility/README.md), and those of chapter 10 in [`measurements/gama5/`](measurements/gama5/README.md), with `../tools/` and `../tests/`.
 
 ## One-paragraph summary
 

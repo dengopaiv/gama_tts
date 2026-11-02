@@ -10,7 +10,7 @@ GamaTTS
 > stand-ins for NVDA, and the GUI (`gui/`) passes a check through MSAA. Neither has been used with a screen reader yet, and
 > nothing here has been judged by ear except the voice itself.
 >
-> - **Build, test and what was checked:** [docs/10](docs/10-model5-api-gui-addon.md). **Who made what:** [NOTICE.md](NOTICE.md).
+> - **How to use the add-on and the GUI:** [docs/11](docs/11-using-it.md). **Build, test and what was checked:** [docs/10](docs/10-model5-api-gui-addon.md). **Who made what:** [NOTICE.md](NOTICE.md).
 > - **The engine has four small fixes, in three files,** listed in `NOTICE.md`. Without them it crashes or falls silent at high tempo, and reads
 >   past its buffers on some text. At tempos up to 3.5 they change no sample.
 >

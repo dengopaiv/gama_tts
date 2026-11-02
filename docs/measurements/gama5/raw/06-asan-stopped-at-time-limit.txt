@@ -1,0 +1,16 @@
+ gama_tts/src/text_parser/english/ApplyStress.cpp |  3 ++-
+ gama_tts/src/text_parser/english/IspTrans.cpp    |  4 +++-
+ gama_tts/src/vtm_control_model/EventList.cpp     | 18 ++++++++++++++----
+ 3 files changed, 19 insertions(+), 6 deletions(-)
+  gama_api_test.vcxproj -> <path>\build-asan\RelWithDebInfo\gama_api_test.exe
+exit 124
+tempo: 918 utterances, every one spoken; 10 needed a lower tempo than asked (rule 11)
+  (tempo took 108 s)
+tokens: 566 utterances, no crash
+  (tokens took 364 s)
+text: 418 spoken, 32 with nothing to say, no crash
+  (text took 56 s)
+phonetic: 95 spoken, 55 refused, no crash
+  (phonetic took 1 s)
+
+[exited with code 1]

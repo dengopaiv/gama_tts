@@ -1,0 +1,23 @@
+package DLL b67242f5f147, 781824 bytes, dated (2026, 10, 17, 7, 44, 50)
+  against <path>\GnuspeechSA-NVDA\build\Release\gnuspeech_api.dll: f6609c6a96d7, 771072 bytes, DIFFERENT
+  against <path>\GnuspeechSA-NVDA\build\gui\Release\gnuspeech_api.dll: 3703d2f0c355, 781824 bytes, DIFFERENT
+  against <path>\GnuspeechSA-NVDA\build\addon-x64\Release\gnuspeech_api.dll: b67242f5f147, 781824 bytes, SAME
+'w' x 100                        PROCESS DIED 0xc0000409      
+'w' x 60                         spoke                        rc 0 samples 1550943
+'<' x 24                         refused                      rc -3 samples 0
+'<' x 23                         refused                      rc -3 samples 0
+'a' x 1000                       ACCESS VIOLATION             access violation
+'1' x 256                        ACCESS VIOLATION             access violation
+128 random consonants            spoke                        rc 0 samples 1377015
+200 random consonants            PROCESS DIED 0xc0000409      
+400 random consonants            PROCESS DIED 0xc0000409      
+400 random hex                   spoke                        rc 0 samples 4762432
+1000 random hex                  ACCESS VIOLATION             access violation
+'OK' at tempo 3.9                spoke                        rc 0 samples 19638
+'OK' at tempo 4.0                spoke                        rc 0 samples 19638
+'OK' at tempo 6.0                spoke                        rc 0 samples 19638
+'OK' at tempo 10.0               spoke                        rc 0 samples 19638
+'a' at tempo 3.9                 spoke                        rc 0 samples 11347
+'a' at tempo 4.0                 spoke                        rc 0 samples 11347
+'a' at tempo 6.0                 spoke                        rc 0 samples 11347
+'a' at tempo 10.0                spoke                        rc 0 samples 11347

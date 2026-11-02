@@ -1,0 +1,5 @@
+tempo: 918 utterances, every one spoken; 10 needed a lower tempo than asked (rule 11)
+  (tempo took 26 s)
+exit 127
+
+[exited with code 0]

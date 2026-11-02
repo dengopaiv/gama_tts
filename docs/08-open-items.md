@@ -2,6 +2,8 @@
 
 What these notes do not settle, roughly in order of usefulness.
 
+**What is open now is in [chapter 10](10-model5-api-gui-addon.md), section 10.** This chapter was written on 2026-10-16 and is kept for what it asked, with notes where something has been answered.
+
 ## Not measured
 
 1. **Model 5 against model 0, by ear and by spectrum.** Model 5 is the
@@ -37,13 +39,14 @@ What these notes do not settle, roughly in order of usefulness.
 - What "GAMA" stands for.
 - The origin and licence of `script/python3/impedance_at_mouth/kinsler.jpg`.
 - Whether upstream (Matuda) would take the two MSVC fixes, a
-  `.gitattributes` for `data/`, or a fix for the CRLF parsing.
+  `.gitattributes` for `data/`, a fix for the CRLF parsing, or the fixes of chapter 10. Nothing has been offered yet.
 
 ## Possible uses here
 
 These are only possibilities. None of them is decided, and each one is a
 decision for the author.
 
+- *All of this is now decided or done: the add-on, as an add-on of its own, is in [chapter 10](10-model5-api-gui-addon.md).*
 - **A second voice for a Gnuspeech-based NVDA add-on.** Model 5 is GPL like
   the rest of Gnuspeech. It needs a C API: GamaTTS has none, and its
   interface passes C++ objects. Under this collection's direction it would
@@ -57,5 +60,5 @@ decision for the author.
 - **Upstream contributions.** The MSVC fixes in chapter 6 are small and
   self-contained. So are the fixes in `measurements/feasibility/engine-fixes.patch`
   ([chapter 9](09-addon-and-gui-feasibility.md)), for the intonation order, a division by
-  zero and a trie index. The long-token overruns have no such patch yet. Nothing has been
+  zero and a trie index, and the fourth, in `light()`, in chapter 10. The long-token overruns have no such patch: the API guards against them, and the parser's buffers are as they were. Nothing has been
   sent upstream.

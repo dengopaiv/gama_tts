@@ -37,7 +37,7 @@
  *     ASCII becomes a space, and a run without a space is broken with one after 100
  *     characters, or sooner if its spelling would pass 1000 bytes. The engine's parser
  *     spells what it cannot pronounce into a fixed buffer with no length check, and
- *     overruns it on 100 "w" or 24 "<". Nothing shorter than that is touched. A phonetic
+ *     overruns it from 62 "w". Nothing shorter than that is touched. A phonetic
  *     string (gama_speak_phonetic) gets the first of these only.
  * 10. Limits shared between parameters: pulse fall time minimum <= maximum, and
  *     rise time + fall time maximum <= 100. When changing several, set them in

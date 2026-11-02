@@ -1,0 +1,6 @@
+seed=1 mode=0 exit=124 reached=430
+seed=1 mode=2 exit=124 reached=720
+seed=2 mode=0 exit=124 reached=290
+seed=2 mode=2 exit=124 reached=595
+
+[exited with code 0]

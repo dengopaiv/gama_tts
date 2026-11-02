@@ -1,0 +1,53 @@
+== 1. patched vs unpatched: identical samples at normal tempos?
+5_male t=1 compared=182 differ=0
+5_male t=2 compared=182 differ=0
+5_male t=3 compared=182 differ=0
+5_male t=3.5 compared=182 differ=0
+0_male t=1 compared=182 differ=0
+0_male t=2 compared=182 differ=0
+0_male t=3 compared=182 differ=0
+0_male t=3.5 compared=182 differ=0
+== 2. same engine repeated / fresh engine / two threads
+5_male samples=168273 same-engine maxdiff=0 fresh-vs-first maxdiff=0
+5_male threads: 60 utterances, 0 differ from sequential
+0_male samples=167778 same-engine maxdiff=0 fresh-vs-first maxdiff=0
+0_male threads: 60 utterances, 0 differ from sequential
+5_female samples=168075 same-engine maxdiff=0 fresh-vs-first maxdiff=0
+5_female threads: 60 utterances, 0 differ from sequential
+== 3. memory over long runs (5_male random on)
+round   0 rss=18.9 MB
+round   5 rss=19.3 MB
+round  10 rss=19.3 MB
+round  15 rss=19.3 MB
+5_male                 ok=2912 fail=  32 nan=0 silent=0 audio= 7655.1s cpu=  123076ms rtf=  62.2 maxUtt=   137ms
+== 4. pitch sweep on tube (NVDA +-12 semitones, plus API extremes)
+5_male p=-24           ok= 182 fail=   2 nan=0 silent=0 audio=  478.4s cpu=    8841ms rtf=  54.1 maxUtt=   109ms
+5_male p=-12           ok= 182 fail=   2 nan=0 silent=0 audio=  478.4s cpu=    7349ms rtf=  65.1 maxUtt=   112ms
+5_male p=+12           ok= 182 fail=   2 nan=0 silent=0 audio=  478.4s cpu=    7713ms rtf=  62.0 maxUtt=    97ms
+5_male p=+24           ok= 182 fail=   2 nan=0 silent=0 audio=  478.4s cpu=    8588ms rtf=  55.7 maxUtt=   127ms
+5_female p=-24         ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=    9631ms rtf=  49.6 maxUtt=   151ms
+5_female p=-12         ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=    8680ms rtf=  55.1 maxUtt=   125ms
+5_female p=+12         ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=    8738ms rtf=  54.7 maxUtt=   127ms
+5_female p=+24         ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=    8520ms rtf=  56.1 maxUtt=   122ms
+5_large_child p=-24    ok= 182 fail=   2 nan=0 silent=0 audio=  477.3s cpu=   10241ms rtf=  46.6 maxUtt=   130ms
+5_large_child p=-12    ok= 182 fail=   2 nan=0 silent=0 audio=  477.3s cpu=   10953ms rtf=  43.6 maxUtt=   163ms
+5_large_child p=+12    ok= 182 fail=   2 nan=0 silent=0 audio=  477.3s cpu=    9934ms rtf=  48.0 maxUtt=   151ms
+5_large_child p=+24    ok= 182 fail=   2 nan=0 silent=0 audio=  477.3s cpu=    9877ms rtf=  48.3 maxUtt=   148ms
+5_small_child p=-24    ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=   12213ms rtf=  39.1 maxUtt=   170ms
+5_small_child p=-12    ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=   12126ms rtf=  39.4 maxUtt=   185ms
+5_small_child p=+12    ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=   12011ms rtf=  39.8 maxUtt=   173ms
+5_small_child p=+24    ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=   12135ms rtf=  39.4 maxUtt=   171ms
+5_baby p=-24           ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=   15551ms rtf=  30.7 maxUtt=   215ms
+5_baby p=-12           ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=   16683ms rtf=  28.6 maxUtt=   224ms
+5_baby p=+12           ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=   18032ms rtf=  26.5 maxUtt=   250ms
+5_baby p=+24           ok= 182 fail=   2 nan=0 silent=0 audio=  477.9s cpu=   22317ms rtf=  21.4 maxUtt=   275ms
+0_male p=-24           ok= 182 fail=   2 nan=0 silent=0 audio=  477.0s cpu=    3194ms rtf= 149.3 maxUtt=    46ms
+0_male p=-12           ok= 182 fail=   2 nan=0 silent=0 audio=  477.0s cpu=    4128ms rtf= 115.5 maxUtt=    52ms
+0_male p=+12           ok= 182 fail=   2 nan=0 silent=0 audio=  477.0s cpu=    4057ms rtf= 117.6 maxUtt=    59ms
+0_male p=+24           ok= 182 fail=   2 nan=0 silent=0 audio=  477.0s cpu=    4009ms rtf= 119.0 maxUtt=    75ms
+4_male p=-24           ok= 182 fail=   2 nan=0 silent=0 audio=  476.8s cpu=   13552ms rtf=  35.2 maxUtt=   219ms
+4_male p=-12           ok= 182 fail=   2 nan=0 silent=0 audio=  476.8s cpu=   12680ms rtf=  37.6 maxUtt=   193ms
+4_male p=+12           ok= 182 fail=   2 nan=0 silent=0 audio=  476.8s cpu=   11589ms rtf=  41.1 maxUtt=   166ms
+4_male p=+24           ok= 182 fail=   2 nan=0 silent=0 audio=  476.8s cpu=   11175ms rtf=  42.7 maxUtt=   162ms
+
+[exited with code 0]

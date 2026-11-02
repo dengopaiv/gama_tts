@@ -1,0 +1,17 @@
+exit 1
+Traceback (most recent call last):
+  File "<path>\tests\api\check_robustness.py", line 315, in <module>
+    main()
+    ~~~~^^
+  File "<path>\tests\api\check_robustness.py", line 297, in main
+    lib = load(args[0])
+  File "<path>\tests\api\check_robustness.py", line 66, in load
+    lib = ctypes.CDLL(path)
+  File "<path>", line 361, in __init__
+    self._handle = self._load_library(name, mode, handle, winmode)
+                   ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<path>", line 379, in _load_library
+    return _LoadLibrary(self._name, winmode)
+FileNotFoundError: Could not find module '<path>\build-asan\RelWithDebInfo\gama_api.dll' (or one of its dependencies). Try using the full path w
+
+[exited with code 0]

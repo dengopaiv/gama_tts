@@ -1,0 +1,34 @@
+-- Build files have been written to: <path>
+  probe.vcxproj -> <path>
+   mode=2 voice=5_male exit=124
+808 4374726c202d2d203c5f2026207838365f3634204e56444120332f3420
+   mode=2 voice=0_male exit=124
+1777 7d2042203130302532326e6420427574746f6e206020652e672e20
+   mode=0 voice=5_male exit=1
+==18860==ERROR: AddressSanitizer: global-buffer-overflow on address 0x7ff7315fe7a8 at pc 0x7ff7314b55aa bp 0x003924af9c30 sp 0x003924af9c30
+READ of size 1 at 0x7ff7315fe7a8 thread T0
+    #0 0x7ff7314b55a9 in GS::TextParser::English::ispTrans(char *, char *) <path>
+    #1 0x7ff7314b167a in GS::TextParser::English::letterToSound(char const *, class std::vector<char, class std::allocator<char>> &) <path>
+    #2 0x7ff73149e596 in GS::TextParser::English::EnglishTextParser::lookupWord(char const *) <path>
+    #3 0x7ff73149c1bf in GS::TextParser::English::EnglishTextParser::expandWord(char *, int, class std::basic_stringstream<char, struct std::char_trai
+    #4 0x7ff73149cfd2 in GS::TextParser::English::EnglishTextParser::finalConversion(class std::basic_stringstream<char, struct std::char_traits<char>
+    #5 0x7ff73149eaa1 in GS::TextParser::English::EnglishTextParser::parse(char const *) <path>
+    #6 0x7ff7313d595e in runOne <path>
+26 6a7d4134345b5c7b4f543f27556b59796f5c4b513b21682f7961413f
+   mode=0 voice=0_male exit=1
+==4396==ERROR: AddressSanitizer: global-buffer-overflow on address 0x7ff7315fe7a8 at pc 0x7ff7314b55aa bp 0x00d963549d40 sp 0x00d963549d40
+READ of size 1 at 0x7ff7315fe7a8 thread T0
+    #0 0x7ff7314b55a9 in GS::TextParser::English::ispTrans(char *, char *) <path>
+    #1 0x7ff7314b167a in GS::TextParser::English::letterToSound(char const *, class std::vector<char, class std::allocator<char>> &) <path>
+    #2 0x7ff73149e596 in GS::TextParser::English::EnglishTextParser::lookupWord(char const *) <path>
+    #3 0x7ff73149c1bf in GS::TextParser::English::EnglishTextParser::expandWord(char *, int, class std::basic_stringstream<char, struct std::char_trai
+    #4 0x7ff73149cfd2 in GS::TextParser::English::EnglishTextParser::finalConversion(class std::basic_stringstream<char, struct std::char_traits<char>
+    #5 0x7ff73149eaa1 in GS::TextParser::English::EnglishTextParser::parse(char const *) <path>
+    #6 0x7ff7313d595e in runOne <path>
+26 6a7d4134345b5c7b4f543f27556b59796f5c4b513b21682f7961413f
+   mode=1 voice=5_male exit=124
+385 e0acfeaf08392afd22
+   mode=1 voice=0_male exit=124
+597 2691a4a05c683df88393e718061a77f192451aedcf5e2f075d2f3824bc
+
+[exited with code 0]

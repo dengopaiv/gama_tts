@@ -156,7 +156,7 @@ def stage_tokens(lib, e, scale):
 			say(lib, e, tok.encode(), f"token {name} {n}")
 			count += 1
 	# Every printable character, repeated: what its spelling costs decides. Before the
-	# guard was sized by spelling, 100 "w" killed the process, and 24 "<" would have.
+	# guard was sized by spelling, 100 "w" killed the process.
 	for code in range(33, 127):
 		ch = chr(code)
 		for n in ((22, 23, 24, 25, 45, 57, 58, 59, 60, 61, 99, 100, 101, 500) if scale > 1 else (23, 24, 25, 58, 59, 60, 100, 101)):

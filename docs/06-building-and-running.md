@@ -1,5 +1,8 @@
 # 6. Building and running
 
+*This chapter is about building upstream's engine as it stood. **To build this fork's API, GUI and add-on, see [chapter 10](10-model5-api-gui-addon.md).** Its root `CMakeLists.txt`
+now sets C++17 and `_USE_MATH_DEFINES` for MSVC from outside, and its `.gitattributes` keeps `data/` as LF, so neither workaround below is needed from there.*
+
 Upstream documents only Linux (`gama_tts/INSTALL.txt`: GCC 12.2 or Clang
 14.0.6, CMake 3.25). This chapter records what was needed on **Windows 11
 x64** on 2026-10-16. Every build here is 64-bit; no 32-bit build was made or
@@ -55,8 +58,8 @@ cmake --build build-msvc --config Release
   rewrites `/D…` as a path.
 - A proper fix in the source would be `set(CMAKE_CXX_STANDARD 17)` and
   `add_compile_definitions(_USE_MATH_DEFINES)` for MSVC in
-  `gama_tts/CMakeLists.txt`. It is not applied: this repository is kept as
-  upstream has it.
+  `gama_tts/CMakeLists.txt`. It was not applied to `gama_tts/CMakeLists.txt`, which stays as
+  upstream has it. The root `CMakeLists.txt` sets both from outside.
 
 **GCC and MSVC give byte-identical output.** With randomness off, the
 parameter files and WAV files of the two builds match byte for byte for
@@ -72,15 +75,15 @@ line:
 Exception: [ConfigurationData] Error in file …/0_male/_index.txt (line 6): Space at the beginning of the line.
 ```
 
-The `\r` counts as a space. The repository has no `.gitattributes`. Ways
-around it:
+The `\r` counts as a space. Upstream has no `.gitattributes`, and this fork's branch `model5` has one. Ways
+around it, on upstream:
 
 - check out with `core.autocrlf=false` or `input`;
 - export the data with LF endings:
   `git -c core.autocrlf=false archive HEAD data | tar -x -C <dir>`. A plain
   `git archive` applies the same conversion, so the `-c` matters;
-- (not applied) add a `.gitattributes` with `data/** -text`, or make
-  `ConfigurationData.cpp` strip `\r`.
+- add a `.gitattributes` with `data/** -text`, which `model5` has done, or make
+  `ConfigurationData.cpp` strip `\r`. A checkout made before that file existed still has CRLF: `rm -rf data; git checkout -- data`.
 
 ## Running
 

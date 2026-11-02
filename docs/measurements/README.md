@@ -1,5 +1,7 @@
 # Measurement scripts
 
+**Chapter 9's are in [`feasibility/`](feasibility/README.md), and chapter 10's in [`gama5/`](gama5/README.md).** What follows is about this folder's own.
+
 Used for [chapter A](../07-measurements.md). All three files are public
 domain.
 

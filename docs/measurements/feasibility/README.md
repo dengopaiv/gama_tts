@@ -3,7 +3,7 @@
 Behind [`../../09-addon-and-gui-feasibility.md`](../../09-addon-and-gui-feasibility.md). Taken on 2026-11-02
 at `b108ad6`, on Windows 11 x64, with Visual Studio 2026 (MSVC 19.51), CMake 4.4.
 
-Nothing here changes the engine. The scripts are public domain. A `probe.exe`, once built, links
+Nothing here changes the engine, and these measurements were made on the engine as upstream has it. The fixes have since been applied on this branch ([chapter 10](../../10-model5-api-gui-addon.md)), so to make `results-2026-11-02.txt` again, use a checkout of `b108ad6`. The scripts are public domain. A `probe.exe`, once built, links
 `libgamatts` and so is GPL-3.0-or-later like the engine.
 
 | File | What it is |
@@ -13,13 +13,13 @@ Nothing here changes the engine. The scripts are public domain. A `probe.exe`, o
 | `results-safe-token-2026-11-02.txt` | The table of token lengths under AddressSanitizer |
 | `run_feasibility.sh` | Runs the main measurements, one after another |
 | `probe.cpp`, `CMakeLists.txt` | The harness: one long-lived engine, many utterances, every exception caught and counted |
-| `engine-fixes.patch` | Three small fixes in two files, **tried only on scratch copies**. Not applied to this repository |
+| `engine-fixes.patch` | The fixes as chapter 9 tried them, on a scratch copy: three, in two files. **Applied since, with a fourth:** `git diff b108ad6 -- gama_tts` is the whole of them |
 | `perturb.py` | Changes each configuration key by itself and compares the WAV with a baseline |
 | `gs_tempo.py` | Gnuspeech's DLL through the same tempos, one process per tempo |
 | `audio_metrics.py` | Level, spectral balance, edge silence, by the method of Gnuspeech's `tools/measure/loudness.py` |
 | `longtokens.py` | Long tokens through both engines, one process per token |
 | `safe_token.py` | The parser under ASan: the first token length with a memory error, per alphabet |
-| `guard_check.py` | Tokens broken every 100 characters under ASan; and where Gnuspeech's DLL first fails |
+| `guard_check.py` | Tokens broken every 100 characters under ASan; and where Gnuspeech's DLL first fails. **Its random tokens showed that guard clean, and it was not enough:** chapter 10, section 5 |
 | `make_kit.py` | The listening files in `build-listening/`, which git ignores |
 
 ## Building

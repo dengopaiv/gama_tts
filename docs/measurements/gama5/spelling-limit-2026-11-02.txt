@@ -1,0 +1,26 @@
+token                     chars  result
+'w' x 50                   50  parsed
+'w' x 55                   55  parsed
+'w' x 58                   58  parsed
+'w' x 60                   60  parsed
+'w' x 61                   61  parsed
+'w' x 62                   62  PROCESS DIED: stack buffer overrun or an uncaught exception
+'w' x 65                   65  PROCESS DIED: stack buffer overrun or an uncaught exception
+'w' x 70                   70  PROCESS DIED: stack buffer overrun or an uncaught exception
+'w' x 80                   80  PROCESS DIED: stack buffer overrun or an uncaught exception
+'w' x 100                 100  PROCESS DIED: stack buffer overrun or an uncaught exception
+'<' x 24                   24  parsed
+'<' x 100                 100  parsed
+'<' x 1000               1000  parsed
+'b<' x 10                   20  parsed
+'b<' x 12                   24  parsed
+'b<' x 13                   26  parsed
+'b<' x 20                   40  parsed
+'b<' x 50                  100  parsed
+'b(' x 10                   20  parsed
+'b(' x 14                   28  parsed
+'b(' x 20                   40  parsed
+'b(' x 50                  100  parsed
+'B' x 100                 100  parsed
+'B' x 150                 150  parsed
+'B' x 200                 200  parsed
