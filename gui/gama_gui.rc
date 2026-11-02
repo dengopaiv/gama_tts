@@ -1,0 +1,5 @@
+// wxWidgets' standard resources, with the manifest that selects version 6
+// of the common controls and declares per-monitor DPI awareness (as
+// Tawkative's ui/tawkative.rc).
+#define wxUSE_DPI_AWARE_MANIFEST 2
+#include "wx/msw/wx.rc"
