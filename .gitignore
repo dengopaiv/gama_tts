@@ -3,3 +3,4 @@
 generated__*
 __pycache__
 /build-*
+/nvda-addon/*.nvda-addon

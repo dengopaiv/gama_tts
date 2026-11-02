@@ -1,0 +1,7 @@
+# The engine reads its data files in binary mode, so a carriage return left by
+# core.autocrlf counts as text ("Space at the beginning of the line").
+# Keep them byte for byte as upstream stores them.
+data/** -text
+
+# The golden traces and their corpus stay byte for byte as the script wrote them.
+tests/golden/** -text

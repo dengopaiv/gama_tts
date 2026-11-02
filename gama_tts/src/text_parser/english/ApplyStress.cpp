@@ -180,7 +180,8 @@ stressSuffix(const char* orthography, int* type)
 bool
 light(const char* sb)
 {
-	while (!isvowel(*sb)) {
+	// A syllable may have no vowel: stop at its end, not somewhere past it.
+	while (*sb && !isvowel(*sb)) {
 		sb++;
 	}
 	while (isvowel(*sb) || (*sb == '_') || (*sb == '.')) {

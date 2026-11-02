@@ -20,6 +20,8 @@
 
 #include "EventList.h"
 
+#include <algorithm>
+
 #include <cassert>
 #include <cstring>
 #include <limits> /* std::numeric_limits<double>::infinity() */
@@ -825,6 +827,13 @@ EventList::prepareMacroIntonationInterpolation()
 
 	if (intonationPoints_.empty()) return;
 
+	// At high tempo a point's negative offset can place it before the previous
+	// point. Interpolating over a backward interval gives a cubic that diverges.
+	std::stable_sort(intonationPoints_.begin(), intonationPoints_.end(),
+			[](const IntonationPoint& a, const IntonationPoint& b) {
+				return a.absoluteTime() < b.absoluteTime();
+			});
+
 	Event* event1 = insertEvent(intonationPoints_[0].absoluteTime(), -1, 0.0, false);
 	if (!event1) {
 		THROW_EXCEPTION(MissingValueException, "Could not create event 1 for intonation.");
@@ -968,12 +977,13 @@ EventList::generateOutput(std::vector<std::vector<float>>& vtmParamList)
 			// Straight line.
 			if (smoothIntonation_) {
 				const double y2 = x2 * (x2 * (x2 * data.a + data.b) + data.c) + data.d;
-				pc = (y2 - y1) / x2;
-				pd = y1;
+				// x2 is 0 when the first point falls in the first control period.
+				pc = (x2 > 0.0) ? (y2 - y1) / x2 : 0.0;
+				pd = (x2 > 0.0) ? y1 : y2;
 			} else {
 				const double y2 = x2 * data.a + data.b;
-				pa = (y2 - y1) / x2;
-				pb = y1;
+				pa = (x2 > 0.0) ? (y2 - y1) / x2 : 0.0;
+				pb = (x2 > 0.0) ? y1 : y2;
 			}
 		}
 	}

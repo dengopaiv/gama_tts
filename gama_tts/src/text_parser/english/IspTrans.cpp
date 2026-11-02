@@ -865,7 +865,9 @@ ispTrans(char *string, char *result)
 
 	strcpy(tstr, string);
 	while (1) {
-		if (*string && (trie[INDEX(*string) + i].val == *string)) {
+		// A character outside the trie's alphabet, near the end of the trie, would index past it.
+		const int trieIndex = INDEX(*string) + i;
+		if (*string && trieIndex >= 0 && trieIndex < TRIE_NODES && (trie[trieIndex].val == *string)) {
 			tmp = trie[INDEX(*string) + i].term_state;
 			if (tmp) {
 				term = tmp;
