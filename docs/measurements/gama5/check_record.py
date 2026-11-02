@@ -25,7 +25,7 @@ FACTS = [
 	("cancel between pieces", D10, "_MAX_PIECE"), ("shared limits", D10, "Shared limits"), ("retry at high tempo", D10, "0.8 of the tempo"),
 	# The results
 	("golden result", D10, "1472 golden rows"), ("C tests", D10, "135 checks"), ("GUI check", D10, "109 checks"), ("ASan clean", D10, "0 failures"), ("fresh clone", D10, "fresh clone"),
-	("--long figures", D10, "1,608 tokens"), ("scan before push", D10, "66 files"), ("the commits", D10, "28eef40"), ("the fourth commit", D10, "A fourth commit"), ("F31 paths in logs", D12, "F31"), ("step 41, quoted", D12, 'The author: "Commit and push."'),
+	("--long figures", D10, "1,608 tokens"), ("scan before push", D10, "66 files"), ("the commits", D10, "28eef40"), ("the fourth commit", D10, "A fourth commit"), ("F31 paths in logs", D12, "F31"), ("step 41, quoted", D12, 'The author: "Commit and push."'), ("step 42, quoted", D12, "Copy docs and stuff there"), ("F32 stray CLAUDE copy", D12, "F32"),
 	# The failures
 	("F4 invalid run", D12, "comparison of missing files"), ("F5 golden start", D12, "FileNotFoundError"), ("F6 link error", D12, "convertValue<int>"), ("F7 guard", D12, "100 `w` overruns"),
 	("F8 URL", D12, "http://www.gnu.org/software/gnuspeech/"), ("F9 no done", D12, "no done"), ("F11 speakers", D12, "played through the speakers"), ("F12 keys", D12, "Typing 99 left 9"),
